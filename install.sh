@@ -49,8 +49,6 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
 # ZSH setup
-mkdir ~/Repos
-git clonegit@github.com:SamuelBorn/dotfiles.git ~/Repos/dotfiles
 sudo dnf install -y zsh autojump-zsh zsh-syntax-highlighting zsh-autosuggestions util-linux-user
 ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
 chsh -s /bin/zsh
