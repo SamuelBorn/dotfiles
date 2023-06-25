@@ -59,6 +59,19 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerle
 # Automatic updates
 systemctl enable --now dnf-automatic-install.timer
 
+# Neovim
+git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim 
+
+# JetBrains Toolbox
+wget -cO jetbrains-toolbox.tar.gz "https://data.services.jetbrains.com/products/download?platform=linux&code=TBA"
+tar -xzf jetbrains-toolbox.tar.gz
+DIR=$(find . -maxdepth 1 -type d -name jetbrains-toolbox-\* -print | head -n1)
+cd $DIR
+./jetbrains-toolbox
+cd ..
+rm -r $DIR
+rm jetbrains-toolbox.tar.gz
+
 # Flatpak apps
 flatpak install -y com.brave.Browser com.discordapp.Discord com.dropbox.Client com.github.finefindus.eyedropper com.github.micahflee.torbrowser-launcher com.mattjakeman.ExtensionManager com.spotify.Client com.ticktick.TickTick io.github.mimbrero.WhatsAppDesktop org.signal.Signal md.obsidian.Obsidian org.gnome.Geary org.kde.okular com.github.tchx84.Flatseal io.github.celluloid_player.Celluloid org.gnome.Loupe com.belmoussaoui.Obfuscate org.gnome.SoundRecorder org.gimp.GIMP net.ankiweb.ankiweb org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 
