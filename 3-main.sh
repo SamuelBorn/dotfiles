@@ -2,12 +2,12 @@
 echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
 # Custom Shortcuts
-gsettings set org.gnome.desktop.wm.keybindings close 			"['<Super>q']" 
-gsettings set org.gnome.settings-daemon.plugins.media-keys home 	"['<Super>f']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys www 		"['<Super>b']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys calculator 	"['<Super>c']" 
-gsettings set org.gnome.settings-daemon.plugins.media-keys suspend 	"['<Super>F1']"  
-gsettings set org.gnome.settings-daemon.plugins.media-keys power 	"['<Super>Delete']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']" 
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>c']" 
+gsettings set org.gnome.settings-daemon.plugins.media-keys suspend "['<Super>F1']"  
+gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>Delete']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/']"
 
@@ -38,13 +38,16 @@ fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
 
 # ZSH setup
-sudo dnf install -y zsh autojump-zsh zsh-syntax-highlighting zsh-autosuggestions util-linux-user
 ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
 chsh -s /bin/zsh
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
 
 # Automatic updates
 systemctl enable --now dnf-automatic-install.timer
+
+# Theme GTK 3 apps 
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Neovim
 git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim 
@@ -58,10 +61,6 @@ cd $DIR
 cd ..
 rm -r $DIR
 rm jetbrains-toolbox.tar.gz
-
-# Theme GTK 3 apps 
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # GitHub
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
