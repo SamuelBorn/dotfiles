@@ -1,3 +1,6 @@
+# No password sudo
+echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
+
 # Custom Shortcuts
 gsettings set org.gnome.desktop.wm.keybindings close 			"['<Super>q']" 
 gsettings set org.gnome.settings-daemon.plugins.media-keys home 	"['<Super>f']"
@@ -26,17 +29,6 @@ echo 'gnome-terminal' > .local/share/nautilus/scripts/Terminal
 chmod +x .local/share/nautilus/scripts/Terminal 
 echo 'F12 Terminal' > .config/nautilus/scripts-accels         
 
-# Updates
-sudo dnf upgrade -y
-sudo dnf install -y gnome-tweaks tldr akmod-nvidia hunspell-de distrobox htop neofetch gnome-pomodoro flameshot dnf-automatic adw-gtk3-theme neovim xclip ripgrep
-
-# GitHub
-ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
-xdg-open "https://github.com/settings/keys"
-
 # Nerd Font
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 mkdir ~/.local/share/fonts/JetBrainsMono
@@ -44,9 +36,6 @@ tar -xf JetBrainsMono.tar.xz -C ~/.local/share/fonts/JetBrainsMono
 rm JetBrainsMono.tar.xz
 fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
-
-# No password sudo
-echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
 # ZSH setup
 sudo dnf install -y zsh autojump-zsh zsh-syntax-highlighting zsh-autosuggestions util-linux-user
@@ -70,9 +59,13 @@ cd ..
 rm -r $DIR
 rm jetbrains-toolbox.tar.gz
 
-# Flatpak apps
-flatpak install -y com.brave.Browser com.discordapp.Discord com.dropbox.Client com.github.finefindus.eyedropper com.github.micahflee.torbrowser-launcher com.mattjakeman.ExtensionManager com.spotify.Client com.ticktick.TickTick io.github.mimbrero.WhatsAppDesktop org.signal.Signal md.obsidian.Obsidian org.gnome.Geary org.kde.okular com.github.tchx84.Flatseal io.github.celluloid_player.Celluloid org.gnome.Loupe com.belmoussaoui.Obfuscate org.gnome.SoundRecorder org.gimp.GIMP net.ankiweb.ankiweb org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
-
 # Theme GTK 3 apps 
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# GitHub
+ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
+xdg-open "https://github.com/settings/keys"
