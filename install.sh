@@ -21,6 +21,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/ command 'gnome-session-quit --logout'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/ binding '<Super>F2'
 
+# Open terminal here shortcut
+echo 'gnome-terminal' > .local/share/nautilus/scripts/Terminal
+chmod +x .local/share/nautilus/scripts/Terminal 
+echo 'F12 Terminal' > .config/nautilus/scripts-accels         
+
 # Updates
 sudo dnf upgrade -y
 sudo dnf install -y gnome-tweaks tldr akmod-nvidia hunspell-de distrobox htop neofetch gnome-pomodoro flameshot dnf-automatic adw-gtk3-theme neovim xclip ripgrep
@@ -44,10 +49,11 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
 # ZSH setup
+mkdir ~/Repos
+git clonegit@github.com:SamuelBorn/dotfiles.git ~/Repos/dotfiles
 sudo dnf install -y zsh autojump-zsh zsh-syntax-highlighting zsh-autosuggestions util-linux-user
+ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
 chsh -s /bin/zsh
-git clone --depth 1 https://github.com/SamuelBorn/Dotfiles.git ~/Repos/dotfiles
-mv ~/Repos/dotfiles/.zshrc ~/.zshrc
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
 
 # Automatic updates
