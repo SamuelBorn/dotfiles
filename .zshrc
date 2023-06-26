@@ -41,3 +41,4 @@ bindkey "^[[1;5D" backward-word
 # p10k loading - stay at bot
 source ~/Repos/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
