@@ -45,22 +45,11 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerle
 # Automatic updates
 systemctl enable --now dnf-automatic-install.timer
 
-# Theme GTK 3 apps 
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
 # Neovim
 git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim 
 
 # JetBrains Toolbox
-wget -cO jetbrains-toolbox.tar.gz "https://data.services.jetbrains.com/products/download?platform=linux&code=TBA"
-tar -xzf jetbrains-toolbox.tar.gz
-DIR=$(find . -maxdepth 1 -type d -name jetbrains-toolbox-\* -print | head -n1)
-cd $DIR
-./jetbrains-toolbox
-cd ..
-rm -r $DIR
-rm jetbrains-toolbox.tar.gz
+curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
 
 # GitHub
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
@@ -68,3 +57,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
+
+# Theme GTK 3 apps 
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
