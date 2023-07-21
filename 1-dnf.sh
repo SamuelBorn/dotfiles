@@ -22,4 +22,8 @@ sudo dnf install -y \
   zsh-autosuggestions \
   util-linux-user
 
+ 
+echo 'defaultyes=True' | sudo tee -a /etc/dnf/dnf.conf
+echo 'max_parallel_downloads=2' | sudo tee -a /etc/dnf/dnf.conf
+
 reboot
