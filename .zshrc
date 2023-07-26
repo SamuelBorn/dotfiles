@@ -14,7 +14,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/autojump/autojump.zsh
 
 # Case Insensitive Autocompletion
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Useful Aliases
