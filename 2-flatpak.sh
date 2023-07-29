@@ -1,25 +1,29 @@
 # Flatpak apps
-
+# Regenerate list: flatpak list --app --columns=application | sed 's/$/ \\/'
 flatpak install -y \
-  org.gtk.Gtk3theme.adw-gtk3 \
-  org.gtk.Gtk3theme.adw-gtk3-dark \
-  com.brave.Browser \
-  com.discordapp.Discord \
-  com.dropbox.Client \
-  com.github.finefindus.eyedropper \
-  com.github.micahflee.torbrowser-launcher \
-  com.mattjakeman.ExtensionManager \
-  com.spotify.Client \
-  com.ticktick.TickTick \
-  io.github.mimbrero.WhatsAppDesktop \
-  org.signal.Signal \
-  md.obsidian.Obsidian \
-  org.gnome.Geary \
-  org.kde.okular \
-  com.github.tchx84.Flatseal \
-  io.github.celluloid_player.Celluloid \
-  org.gnome.Loupe \
-  com.belmoussaoui.Obfuscate \
-  org.gnome.SoundRecorder \
-  org.gimp.GIMP \
-  net.ankiweb.Anki
+com.belmoussaoui.Obfuscate \
+com.brave.Browser \
+com.discordapp.Discord \
+com.dropbox.Client \
+com.github.finefindus.eyedropper \
+com.github.flxzt.rnote \
+com.github.micahflee.torbrowser-launcher \
+com.github.tchx84.Flatseal \
+com.github.unrud.VideoDownloader \
+com.github.wwmm.easyeffects \
+com.mattjakeman.ExtensionManager \
+com.mojang.Minecraft \
+com.spotify.Client \
+com.ticktick.TickTick \
+io.github.celluloid_player.Celluloid \
+io.github.mimbrero.WhatsAppDesktop \
+md.obsidian.Obsidian \
+net.ankiweb.Anki \
+org.gimp.GIMP \
+org.gnome.Geary \
+org.gnome.Loupe \
+org.gnome.SoundRecorder \
+org.inkscape.Inkscape \
+org.kde.kdenlive \
+org.kde.okular \
+org.signal.Signal 
