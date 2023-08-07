@@ -1,4 +1,5 @@
-# Flatpak apps
+flatpak config --set extra-languages "de"
+
 # Regenerate list: flatpak list --app --columns=application | sed 's/$/ \\/'
 flatpak install -y \
 com.belmoussaoui.Obfuscate \
