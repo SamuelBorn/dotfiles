@@ -19,6 +19,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Useful Aliases
 alias lg="lazygit"
+alias venv="virtualenv venv && source venv/bin/activate"
+alias venva="source venv/bin/activate"
 alias ls="ls -Ah --color=auto"
 alias ll="ls -lh"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
