@@ -42,6 +42,9 @@ ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
 chsh -s /bin/zsh
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
 
+# Neovim setup
+ln -s ~/Repos/dotfiles/nvim/ ~/.config/nvim/ 
+
 # GitHub
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
 eval "$(ssh-agent -s)"
