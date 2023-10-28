@@ -7,6 +7,5 @@ sudo dracut --regenerate-all --force  # sudo update-initramfs -u
 sudo plymouth-set-default-theme details -R
 
 # Mouse hotkeys switch workspaces
-ln -s ~/Repos/dotfiles/input-remapper-2 ~/.config
 sudo dnf install -y input-remapper
 sudo systemctl enable --now input-remapper

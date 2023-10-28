@@ -31,8 +31,8 @@ echo 'F12 Terminal' > .config/nautilus/scripts-accels
 
 # Nerd Font
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-mkdir ~/.local/share/fonts/JetBrainsMono
-tar -xf JetBrainsMono.tar.xz -C ~/.local/share/fonts/JetBrainsMono
+mkdir -p ~/.local/share/fonts/JetBrainsMono
+tar xf JetBrainsMono.tar.xz --directory=~/.local/share/fonts/JetBrainsMono
 rm JetBrainsMono.tar.xz
 fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
@@ -41,15 +41,6 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
 chsh -s /bin/zsh
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
-
-# Automatic updates
-systemctl enable --now dnf-automatic-install.timer
-
-# Neovim
-git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim 
-
-# JetBrains Toolbox
-curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
 
 # GitHub
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
@@ -61,3 +52,7 @@ xdg-open "https://github.com/settings/keys"
 # Theme GTK 3 apps 
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# JetBrains Toolbox
+curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
+
