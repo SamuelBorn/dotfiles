@@ -15,7 +15,7 @@ return {
         vim.keymap.set('n', '<leader>fe', function()
             require('telescope.builtin').find_files({
                 cwd = "~",
-                search_dirs = { "~/.config/", "~/Repos/", "~/Dropbox/" },
+                search_dirs = { "~/Repos/", "~/Dropbox/" },
                 file_ignore_patterns = { "venv", "%.docx", "%.pyi", "%.pyc", "%.png", "%.jpg", "%.pdf", "%.svg", "%.note" },
             })
         end)
