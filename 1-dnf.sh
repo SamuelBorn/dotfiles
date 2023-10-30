@@ -5,23 +5,22 @@ echo 'max_parallel_downloads=2' | sudo tee -a /etc/dnf/dnf.conf
 sudo dnf upgrade -y
 
 sudo dnf install -y \
-    gnome-tweaks \
-    tldr \
-    akmod-nvidia \
-    hunspell-de \
-    distrobox \
-    htop \
-    neofetch \
-    gnome-pomodoro \
-    flameshot \
     adw-gtk3-theme \
-    neovim \
-    xclip \
-    ripgrep \
-    zsh \
+    akmod-nvidia \
     autojump-zsh \
-    zsh-syntax-highlighting \
+    flameshot \
+    gnome-pomodoro \
+    gnome-tweaks \
+    htop \
+    hunspell-de \
+    neofetch \
+    neovim \
+    ripgrep \
+    tldr \
+    util-linux-user \
+    xclip \
+    zsh \
     zsh-autosuggestions \
-    util-linux-user
+    zsh-syntax-highlighting 
 
 reboot

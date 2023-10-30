@@ -39,8 +39,8 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 
 # ZSH setup
 ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
-chsh -s /bin/zsh
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
+chsh -s /bin/zsh
 
 # Neovim setup
 ln -s ~/Repos/dotfiles/nvim/ ~/.config/nvim/ 
@@ -52,10 +52,9 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
 
-# Theme GTK 3 apps 
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
 # JetBrains Toolbox
 curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
 
+# Theme GTK 3 apps 
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
