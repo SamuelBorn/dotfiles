@@ -13,11 +13,10 @@ vim.o.smartcase = true
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
-vim.o.breakindent = true
-vim.o.linebreak = true
-
 vim.o.signcolumn = 'no'
 vim.o.scrolloff = 8
+
+vim.o.wrap = false
 
 -- Always split windows vertically
 vim.api.nvim_create_autocmd("WinNew", { command = "wincmd L" })
