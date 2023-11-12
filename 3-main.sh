@@ -3,11 +3,11 @@ echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
 # Custom Shortcuts
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']" 
-gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>c']" 
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>F3']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys suspend "['<Super>F1']"  
-gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>Delete']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/']"
 
