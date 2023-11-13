@@ -23,6 +23,13 @@ vim.keymap.set('n', '<leader>v', '<C-w>v')
 
 -- Yank to system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- Paste over selection without loosing clipboard
+vim.keymap.set('x', '<leader>p', [["_dP]])
+
+-- Delete without going into nvim clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
 -- Surround visual selection
 vim.keymap.set('v', '(', 'c()<esc>P<right>%')
@@ -38,11 +45,8 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 -- Append next line to current without moving cursor
 vim.keymap.set('n', 'J', 'mzJ`z')
 
--- Paste over selection without loosing clipboard
-vim.keymap.set('x', '<leader>p', [["_dP]])
-
 -- Open open file explorer
-vim.keymap.set('n', '<leader>ee', '<cmd>Explore<cr>')
+vim.keymap.set('n', '<leader>ex', '<cmd>Explore<cr>')
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
