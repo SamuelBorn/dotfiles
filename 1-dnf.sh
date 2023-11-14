@@ -17,6 +17,7 @@ sudo dnf install -y \
     neovim \
     ripgrep \
     tldr \
+    trash-cli \
     util-linux-user \
     xclip \
     zsh \
