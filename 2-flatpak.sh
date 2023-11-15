@@ -4,6 +4,7 @@ flatpak config --set extra-languages "de"
 flatpak install -y \
 org.gtk.Gtk3theme.adw-gtk3 \
 org.gtk.Gtk3theme.adw-gtk3-dark \
+\
 com.belmoussaoui.Obfuscate \
 com.discordapp.Discord \
 com.dropbox.Client \
