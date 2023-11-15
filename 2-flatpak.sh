@@ -14,7 +14,7 @@ com.github.jeromerobert.pdfarranger \
 com.github.johnfactotum.Foliate \
 com.github.micahflee.torbrowser-launcher \
 com.github.tchx84.Flatseal \
-com.google.Chrome \
+org.chromium.Chromium \
 com.mattjakeman.ExtensionManager \
 com.spotify.Client \
 com.ticktick.TickTick \
