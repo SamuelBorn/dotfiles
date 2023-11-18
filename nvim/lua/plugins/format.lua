@@ -4,6 +4,7 @@ return {
         require("conform").setup({
             formatters_by_ft = {
                 python = { "isort", "black" },
+                sh = { "shfmt" },
             },
         })
         vim.keymap.set("n", "<leader>l", function()
