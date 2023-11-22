@@ -5,8 +5,8 @@ fi
 
 # Set history options
 HISTFILE=~/.config/zsh_histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
