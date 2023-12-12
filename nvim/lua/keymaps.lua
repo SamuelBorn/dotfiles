@@ -53,5 +53,5 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Go to complete end and beginnng of file
-vim.keymap.set('n', 'gg', 'gg0')
-vim.keymap.set('n', 'G', 'G$')
+vim.keymap.set({ 'n', 'v' }, 'gg', 'gg0')
+vim.keymap.set({ 'n', 'v' }, 'G', 'G$')
