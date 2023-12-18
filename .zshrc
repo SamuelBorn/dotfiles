@@ -21,7 +21,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
 alias ls="ls -Ah --color=auto"
-alias ll="ls -lh"
+alias ll="ls -lh --color=auto"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
 function md(){mkdir -p "$1" && cd "$1"}
@@ -34,10 +34,10 @@ export PATH
 export VISUAL=nvim
 export EDITOR=nvim
 
-# Fix zsh movement in terminal in Terminal
+# Fix zsh movement in terminal in Terminal - see codes with "cat"
 export WORDCHARS={}
 bindkey '^H' backward-kill-word
-bindkey '5~' kill-word
+bindkey '^[[3;5~' kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
