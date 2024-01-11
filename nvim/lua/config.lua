@@ -11,7 +11,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.hlsearch = false
-vim.o.incsearch = true
 
 vim.o.signcolumn = 'no'
 vim.o.scrolloff = 8
