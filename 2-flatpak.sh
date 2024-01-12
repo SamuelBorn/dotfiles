@@ -14,7 +14,7 @@ com.github.jeromerobert.pdfarranger \
 com.github.johnfactotum.Foliate \
 com.github.micahflee.torbrowser-launcher \
 com.github.tchx84.Flatseal \
-org.chromium.Chromium \
+com.google.Chrome \
 com.mattjakeman.ExtensionManager \
 com.spotify.Client \
 com.ticktick.TickTick \
@@ -26,6 +26,5 @@ org.gimp.GIMP \
 org.gnome.Geary \
 org.gnome.SoundRecorder \
 org.kde.okular \
-org.signal.Signal \
-us.zoom.Zoom 
+org.signal.Signal
 

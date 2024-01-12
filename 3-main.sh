@@ -5,9 +5,10 @@ echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>c']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>F3']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys suspend "['<Super>F1']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys suspend "['<Super>F1']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>F3']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/']"
 
@@ -30,10 +31,8 @@ chmod +x .local/share/nautilus/scripts/Terminal
 echo 'F12 Terminal' >.config/nautilus/scripts-accels
 
 # Nerd Font
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
 mkdir -p ~/.local/share/fonts/JetBrainsMono
-tar xf JetBrainsMono.tar.xz --directory=~/.local/share/fonts/JetBrainsMono
-rm JetBrainsMono.tar.xz
+curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz | tar -xJ -C ~/.local/share/fonts/JetBrainsMono
 fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
 
