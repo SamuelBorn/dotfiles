@@ -17,7 +17,7 @@ return {
 			vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols)
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover)
-			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+			vim.keymap.set({"n", "i"}, "<C-k>", vim.lsp.buf.signature_help)
 		end
 
 		-- add optional config to some lsp servers
