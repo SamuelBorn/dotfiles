@@ -1,21 +1,21 @@
 vim.g.mapleader = ' '
 
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
-vim.o.number = true
-vim.o.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-vim.o.hlsearch = false
+vim.opt.hlsearch = false
 
-vim.o.signcolumn = 'no'
-vim.o.scrolloff = 8
+vim.opt.signcolumn = 'no'
+vim.opt.scrolloff = 8
 
-vim.o.wrap = false
+vim.opt.wrap = false
 
 -- Always split windows vertically
 vim.api.nvim_create_autocmd("WinNew", { command = "wincmd L" })
