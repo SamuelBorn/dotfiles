@@ -32,8 +32,8 @@ Feel free to customize the script by commenting out sections that are not releva
 1. Execute the scripts in the specified order:
 
    ```bash
-   ./01-dnf-setup.sh
-   ./02-flatpak-install.sh
-   ./03-config-options.sh
-   ./04-home-specific.sh   # (optional)
+   ./01-dnf.sh
+   ./02-flatpak.sh
+   ./03-main.sh
+   ./04-desktop.sh   # (optional)
    ```
