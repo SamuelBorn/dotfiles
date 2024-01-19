@@ -29,6 +29,8 @@ Feel free to customize the script by commenting out sections that are not releva
    cd dotfiles-fedora
    ```
 
+1. Adept the scripts to fit four own needs. Delete stuff, add stuff, change stuff.
+
 1. Execute the scripts in the specified order:
 
    ```bash
