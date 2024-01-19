@@ -1,0 +1,41 @@
+# Dotfiles and Post-install Scripts for Fedora
+
+Welcome to my collection of dotfiles and post-installation scripts tailored for Fedora.
+These files primarily focus on configuring Neovim and Zsh, providing a seamless development environment.
+
+## Overview
+
+The included post-install script streamlines the setup process by installing essential software and configuring various options, such as themes, shortcuts, and fonts.
+Feel free to customize the script by commenting out sections that are not relevant to your needs.
+
+**Note: Execute the files in the following order for a smooth setup:**
+
+1. **01-dnf-setup.sh**: Configure DNF options, install crucial packages, and reboot.
+2. **02-flatpak-install.sh**: Install commonly used Flatpaks to enhance your Fedora experience.
+3. **03-config-options.sh**: Set options, configure shortcuts, and more.
+4. **04-home-specific.sh**: Tailored for my home use case; you might not need this file.
+
+## Usage Instructions
+
+1. Clone this repository to your local machine:
+
+    ```bash
+    git clone https://github.com/your-username/dotfiles-fedora.git
+    ```
+
+2. Navigate to the cloned directory:
+
+    ```bash
+    cd dotfiles-fedora
+    ```
+
+3. Execute the scripts in the specified order:
+
+    ```bash
+    ./01-dnf-setup.sh
+    ./02-flatpak-install.sh
+    ./03-config-options.sh
+    ./04-home-specific.sh (optional)
+    ```
+
+Feel free to explore and adapt these dotfiles and scripts to match your preferences and requirements. Happy coding!
