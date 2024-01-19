@@ -1,7 +1,8 @@
 # Dotfiles and Post-install Scripts for Fedora
 
 Welcome to my collection of dotfiles and post-installation scripts tailored for Fedora.
-These files primarily focus on configuring Neovim and Zsh, providing a seamless development environment.
+These files primarily focus on installing useful software and configuring Neovim and Zsh,
+providing a seamless development environment.
 
 ## Overview
 
