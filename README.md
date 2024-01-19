@@ -8,8 +8,6 @@ These files primarily focus on configuring Neovim and Zsh, providing a seamless 
 The included post-install script streamlines the setup process by installing essential software and configuring various options, such as themes, shortcuts, and fonts.
 Feel free to customize the script by commenting out sections that are not relevant to your needs.
 
-**Note: Execute the files in the following order for a smooth setup:**
-
 1. **01-dnf-setup.sh**: Configure DNF options, install crucial packages, and reboot.
 1. **02-flatpak-install.sh**: Install commonly used Flatpaks to enhance your Fedora experience.
 1. **03-config-options.sh**: Set options, configure shortcuts, and more.
@@ -39,5 +37,3 @@ Feel free to customize the script by commenting out sections that are not releva
    ./03-config-options.sh
    ./04-home-specific.sh   # (optional)
    ```
-
-Feel free to explore and adapt these dotfiles and scripts to match your preferences and requirements. Happy coding!
