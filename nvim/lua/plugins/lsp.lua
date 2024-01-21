@@ -20,12 +20,6 @@ return {
 			vim.keymap.set({"n", "i"}, "<C-k>", vim.lsp.buf.signature_help)
 		end
 
-		-- add optional config to some lsp servers
-		-- install new lsp servers with :Mason
-		local server_settings = {
-			lua_ls = { Lua = { workspace = { checkThirdParty = false } } },
-		}
-
 		require("neodev").setup()
 		require("mason").setup()
 		require("mason-lspconfig").setup()
@@ -34,7 +28,6 @@ return {
 				require("lspconfig")[server_name].setup({
 					capabilities = require("cmp_nvim_lsp").default_capabilities(),
 					on_attach = on_attach,
-					settings = server_settings[server_name],
 				})
 			end,
 		})
