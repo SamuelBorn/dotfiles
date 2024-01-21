@@ -17,8 +17,7 @@ vim.opt.scrolloff = 8
 
 vim.opt.wrap = false
 
--- Always split windows vertically
-vim.api.nvim_create_autocmd("WinNew", { command = "wincmd L" })
+vim.opt.splitright = true
 
 -- Set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
