@@ -13,7 +13,7 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = false
 
 vim.opt.signcolumn = 'no'
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 999
 
 vim.opt.wrap = false
 
