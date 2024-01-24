@@ -18,7 +18,7 @@ sudo dnf install -y \
 	ripgrep \
 	tldr \
 	trash-cli \
-	util-linux-user \
+	util-linux \
 	xclip \
 	zsh \
 	zsh-autosuggestions \
