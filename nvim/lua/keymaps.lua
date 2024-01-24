@@ -27,7 +27,7 @@ vim.keymap.set({ "n", "v" }, "G", "G$")
 
 -- Yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>Y", '"+y$')
 
 -- Paste over selection without loosing clipboard
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -44,3 +44,8 @@ vim.keymap.set("v", '"', 'c""<esc>P<right>%')
 
 -- Ctrl + s to save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>")
+
+-- Diagnostics
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
