@@ -54,11 +54,6 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
 
-# JetBrains Toolbox
-curl -L "https://data.services.jetbrains.com/products/download?platform=linux&code=TBA" | tar -xz
-jetbrains-toolbox*/jetbrains-toolbox
-rm -rf jetbrains-toolbox*
-
 # Theme GTK 3 apps
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
