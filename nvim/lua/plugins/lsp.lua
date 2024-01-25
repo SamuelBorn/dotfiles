@@ -4,6 +4,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "folke/neodev.nvim",
+        { "j-hui/fidget.nvim", opts = {} },
     },
     config = function()
         local on_attach = function(client, bufnr)
