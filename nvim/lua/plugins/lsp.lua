@@ -6,7 +6,7 @@ return {
         "folke/neodev.nvim",
     },
     config = function()
-        local on_attach = function()
+        local on_attach = function(client, bufnr)
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 
@@ -18,6 +18,10 @@ return {
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
+
+            if client.server_capabilities.inlayHintProvider then
+                vim.lsp.inlay_hint.enable(bufnr, true)
+            end
         end
 
         require("neodev").setup()
