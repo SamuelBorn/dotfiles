@@ -15,7 +15,7 @@ Just grab the dotfiles you need or run the scripts below to get the whole setup.
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/dotfiles-fedora.git
+   git clone https://github.com/SamuelBorn/dotfiles.git
    ```
 
 1. Navigate to the cloned directory:
