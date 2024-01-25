@@ -1,5 +1,6 @@
--- Split window vertically
+-- Split window
 vim.keymap.set("n", "<leader>v", "<C-w>v")
+vim.keymap.set("n", "<leader>h", "<C-w>h")
 
 -- Close windows
 vim.keymap.set("n", "<leader>q", "<C-w>q")
@@ -16,10 +17,6 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>")
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>")
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>")
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>")
-
--- Centered Jumps
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Go to complete end and beginnng of file
 vim.keymap.set({ "n", "v" }, "gg", "gg0")
