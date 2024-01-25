@@ -18,6 +18,7 @@ vim.opt.scrolloff = 999
 vim.opt.wrap = false
 
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
