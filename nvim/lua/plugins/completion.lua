@@ -1,38 +1,53 @@
 return {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-buffer',
-        'rafamadriz/friendly-snippets',
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-buffer",
+        "rafamadriz/friendly-snippets",
     },
     config = function()
-        require('luasnip.loaders.from_vscode').lazy_load() -- friendly snippets setup
+        require("luasnip.loaders.from_vscode").lazy_load()
 
-        require('luasnip').config.setup {}
+        require("luasnip").config.setup()
 
-        require('cmp').setup {
+        local cmp = require("cmp")
+        cmp.setup {
             snippet = {
                 expand = function(args)
-                    require('luasnip').lsp_expand(args.body)
+                    require("luasnip").lsp_expand(args.body)
                 end,
             },
-            mapping = require('cmp').mapping.preset.insert {
-                ['<C-n>'] = require('cmp').mapping.select_next_item(),
-                ['<C-p>'] = require('cmp').mapping.select_prev_item(),
-                ['<CR>'] = require('cmp').mapping.confirm {
-                    behavior = require('cmp').ConfirmBehavior.Replace,
+            mapping = cmp.mapping.preset.insert {
+                ["<C-n>"] = cmp.mapping.select_next_item(),
+                ["<C-p>"] = cmp.mapping.select_prev_item(),
+                ["<C-e>"] = require("cmp").mapping.abort(),
+                ["<CR>"] = cmp.mapping.confirm {
+                    behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 },
-                ['<C-e>'] = require("cmp").mapping.abort(),
+                ["<Tab>"] = cmp.mapping(function()
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    else
+                        require("luasnip").expand_or_jump()
+                    end
+                end, { "i", "s" }),
+                ["<S-Tab>"] = cmp.mapping(function()
+                    if cmp.visible() then
+                        cmp.select_prev_item()
+                    else
+                        require("luasnip").jump(-1)
+                    end
+                end, { "i", "s" }),
             },
             sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'path' },
-                { name = 'buffer' },
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "path" },
+                { name = "buffer" },
             },
         }
     end
