@@ -24,10 +24,13 @@ alias ls="ls -Ah --color=auto"
 alias ll="ls -lh --color=auto"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
+function search(){sudo find / -iname "*$1*"}
+function searchhere(){sudo find . -iname "*$1*"}
 function md(){mkdir -p "$1" && cd "$1"}
 
 # Path
-path+=("/var/lib/flatpak/exports/bin")
+path+=(/var/lib/flatpak/exports/bin)
+path+=(~/.cargo/bin)
 export PATH
 
 # Environment variables 
