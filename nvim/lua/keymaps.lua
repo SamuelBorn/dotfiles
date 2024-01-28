@@ -1,6 +1,6 @@
 -- Split window
 vim.keymap.set("n", "<leader>v", "<C-w>v")
-vim.keymap.set("n", "<leader>h", "<C-w>h")
+vim.keymap.set("n", "<leader>h", "<C-w>s")
 
 -- Close windows
 vim.keymap.set("n", "<leader>q", "<C-w>q")
