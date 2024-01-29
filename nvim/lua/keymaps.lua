@@ -1,10 +1,10 @@
--- Split window
-vim.keymap.set("n", "<leader>v", "<C-w>v")
-vim.keymap.set("n", "<leader>h", "<C-w>s")
-
 -- Close windows
-vim.keymap.set("n", "<leader>q", "<C-w>q")
-vim.keymap.set("n", "<leader>o", "<C-w>o")
+vim.keymap.set("n", "<leader>q", vim.cmd.quit)
+vim.keymap.set("n", "<leader>o", vim.cmd.only)
+
+-- Split window
+vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>h", vim.cmd.split)
 
 -- Move to window using the <ctrl>+hjkl
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -26,18 +26,9 @@ vim.keymap.set({ "n", "v" }, "G", "G$")
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 
--- Paste over selection without loosing clipboard
+-- Change without overriding nvim clipboard
 vim.keymap.set("x", "<leader>p", [["_dP]])
-
--- Delete without going into nvim clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
--- Surround visual selection
-vim.keymap.set("v", "(", "c()<esc>P<right>%")
-vim.keymap.set("v", "[", "c[]<esc>P<right>%")
-vim.keymap.set("v", "{", "c{}<esc>P<right>%")
-vim.keymap.set("v", "'", "c''<esc>P<right>%")
-vim.keymap.set("v", '"', 'c""<esc>P<right>%')
 
 -- Ctrl + s to save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>")
