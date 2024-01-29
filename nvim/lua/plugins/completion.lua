@@ -28,21 +28,24 @@ return {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 },
-                ["<Tab>"] = cmp.mapping(function()
+                ['<Tab>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
-                    else
+                    elseif require("luasnip").expand_or_locally_jumpable() then
                         require("luasnip").expand_or_jump()
+                    else
+                        fallback()
                     end
-                end, { "i", "s" }),
-                ["<S-Tab>"] = cmp.mapping(function()
+                end, { 'i', 's' }),
+                ['<S-Tab>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
-                    else
+                    elseif require("luasnip").locally_jumpable(-1) then
                         require("luasnip").jump(-1)
+                    else
+                        fallback()
                     end
-                end, { "i", "s" }),
-            },
+                end, { 'i', 's' }), },
             sources = {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
