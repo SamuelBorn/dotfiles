@@ -1,6 +1,3 @@
-# Swap escape and caps
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
-
 # No password sudo
 echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
 
