@@ -26,9 +26,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/ binding '<Super>F2'
 
 # Open terminal here shortcut
-echo 'gnome-terminal' >.local/share/nautilus/scripts/Terminal
-chmod +x .local/share/nautilus/scripts/Terminal
-echo 'F12 Terminal' >.config/nautilus/scripts-accels
+echo 'gnome-terminal' >~/.local/share/nautilus/scripts/Terminal
+chmod +x ~/.local/share/nautilus/scripts/Terminal
+echo 'F12 Terminal' >~/.config/nautilus/scripts-accels
 
 # Nerd Font
 mkdir -p ~/.local/share/fonts/JetBrainsMono
@@ -42,7 +42,7 @@ git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerle
 chsh -s /bin/zsh
 
 # Neovim setup
-ln -s ~/Repos/dotfiles/nvim/ ~/.config/nvim/
+ln -s ~/Repos/dotfiles/nvim ~/.config/nvim
 
 # Theme Firefox with Gnome theme
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
