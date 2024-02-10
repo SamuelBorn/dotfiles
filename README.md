@@ -5,10 +5,10 @@ Feel free to customize the script by commenting out sections that are not releva
 
 Just grab the dotfiles you need or run the scripts below to get the whole setup.
 
-1. **01-dnf-setup.sh**: Configure DNF options, install crucial packages, and reboot.
-1. **02-flatpak-install.sh**: Install commonly used Flatpaks to enhance your Fedora experience.
-1. **03-config-options.sh**: Set options, configure shortcuts, and more.
-1. **04-home-specific.sh**: Tailored for my home use case; you might not need this file.
+1. **1-dnf-setup.sh**: Configure DNF options, install crucial packages, and reboot.
+1. **2-flatpak-install.sh**: Install commonly used Flatpaks to enhance your Fedora experience.
+1. **3-config-options.sh**: Set options, configure shortcuts, and more.
+1. **4-home-specific.sh**: Tailored for my home use case; you might not need this file.
 
 ## Full Setup Instructions
 
@@ -29,8 +29,8 @@ Just grab the dotfiles you need or run the scripts below to get the whole setup.
 1. Execute the scripts in the specified order:
 
    ```bash
-   ./01-dnf.sh
-   ./02-flatpak.sh
-   ./03-main.sh
-   ./04-desktop.sh   # (optional)
+   ./1-dnf.sh
+   ./2-flatpak.sh
+   ./3-main.sh
+   ./4-desktop.sh   # (optional)
    ```
