@@ -57,3 +57,7 @@ xdg-open "https://github.com/settings/keys"
 # Theme GTK 3 apps
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# Input remapping: used for esc-caps and mouse buttons
+sudo dnf install -y input-remapper
+sudo systemctl enable --now input-remapper
