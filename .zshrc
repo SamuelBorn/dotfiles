@@ -37,7 +37,7 @@ export PATH
 export VISUAL=nvim
 export EDITOR=nvim
 
-# Fix zsh movement in terminal in Terminal - see codes with "cat"
+# Fix zsh movement in terminal in Terminal - see key codes with "cat"
 export WORDCHARS={}
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
