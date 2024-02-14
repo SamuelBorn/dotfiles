@@ -54,6 +54,14 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
 
+# Git setup with signing
+git config --global user.name "Samuel Born"
+git config --global user.email samuelborn@outlook.de
+git config --global core.editor nvim
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+
 # Theme GTK 3 apps
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
