@@ -47,7 +47,7 @@ ln -s ~/Repos/dotfiles/nvim ~/.config/nvim
 # Theme Firefox with Gnome theme
 curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
 
-# GitHub
+# GitHub add ssh key
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
