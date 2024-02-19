@@ -31,7 +31,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Ctrl + s to save
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>")
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", vim.cmd.write)
 
 -- Diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
