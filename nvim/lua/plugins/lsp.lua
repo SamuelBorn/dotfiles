@@ -3,7 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "folke/neodev.nvim",
+        { "folke/neodev.nvim", opts = {} },
         { "j-hui/fidget.nvim", opts = {} },
     },
     config = function()
@@ -25,7 +25,6 @@ return {
             end
         end
 
-        require("neodev").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
