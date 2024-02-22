@@ -1,4 +1,5 @@
--- Close windows
+-- Useful custom keymaps
+vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
@@ -30,11 +31,8 @@ vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- Ctrl + s to save
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", vim.cmd.write)
-
 -- Show diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 
--- leave terminal mode
+-- Leave terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
