@@ -33,9 +33,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- Ctrl + s to save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", vim.cmd.write)
 
--- Diagnostics
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- Show diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 
 -- leave terminal mode
