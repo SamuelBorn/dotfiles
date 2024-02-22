@@ -6,6 +6,7 @@ return {
                 python = { "isort", "black" },
                 sh = { "shfmt" },
                 markdown = { "mdformat" },
+                javascript = { { "prettierd", "prettier" } },
             },
         })
         vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_fallback = true }) end)
