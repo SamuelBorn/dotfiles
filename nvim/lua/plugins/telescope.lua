@@ -6,7 +6,6 @@ return {
     },
     config = function()
         require("telescope").load_extension("fzf")
-        -- require("telescope").setup({ pickers = { help_tags = { mappings = { i = { ["<CR>"] = "file_vsplit" } } } } })
 
         vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files() end)
         vim.keymap.set("n", "<leader>fb", function() require("telescope.builtin").buffers() end)
