@@ -7,10 +7,10 @@ return {
     config = function()
         require("telescope").load_extension("fzf")
 
-        vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files() end)
-        vim.keymap.set("n", "<leader>fb", function() require("telescope.builtin").buffers() end)
-        vim.keymap.set("n", "<leader>fg", function() require("telescope.builtin").live_grep() end)
-        vim.keymap.set("n", "<leader>fh", function() require("telescope.builtin").help_tags() end)
+        vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files)
+        vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers)
+        vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep)
+        vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags)
         vim.keymap.set("n", "<leader>fe", function()
             require("telescope.builtin").find_files({
                 cwd = "~",
