@@ -3,7 +3,7 @@ return {
     dependencies = { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     config = function()
         local formatters_by_ft = {
-            javascript = { "prettierd" },
+            javascript = { {"prettierd", "prettier"} },
             markdown = { "mdformat" },
             python = { "isort", "black" },
             sh = { "shfmt" },
