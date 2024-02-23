@@ -28,11 +28,11 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 
 -- Change without overriding nvim clipboard
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 -- Show diagnostics
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 -- Leave terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
