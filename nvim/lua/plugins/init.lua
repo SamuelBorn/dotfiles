@@ -1,7 +1,7 @@
 -- one-line plugin imports
 return {
     { 'numToStr/Comment.nvim',  opts = {} },
-    { "kylechui/nvim-surround", opts = {} },
+    { 'echasnovski/mini.surround',  opts = {}},
     {
         'github/copilot.vim',
         config = function()
