@@ -23,23 +23,15 @@ return {
             mapping = cmp.mapping.preset.insert {
                 ["<C-n>"] = cmp.mapping.select_next_item(),
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-e>"] = require("cmp").mapping.abort(),
-                ["<CR>"] = cmp.mapping.confirm {
-                    behavior = cmp.ConfirmBehavior.Replace,
-                    select = true,
-                },
-                ['<Tab>'] = cmp.mapping(function(fallback)
+                ["<C-y>"] = cmp.mapping.confirm { select = true },
+                ['<C-l>'] = cmp.mapping(function()
                     if require("luasnip").expand_or_locally_jumpable() then
-                        require("luasnip").jump(1)
-                    else
-                        fallback()
+                        require("luasnip").expand_or_jump()
                     end
                 end, { 'i', 's' }),
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
+                ['<C-h>'] = cmp.mapping(function()
                     if require("luasnip").locally_jumpable(-1) then
                         require("luasnip").jump(-1)
-                    else
-                        fallback()
                     end
                 end, { 'i', 's' }), },
             sources = {
