@@ -27,12 +27,13 @@ vim.keymap.set({ "n", "v" }, "G", "G$")
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 
--- Change without overriding nvim clipboard
-vim.keymap.set("x", "<leader>p", '"_dP')
+-- Delete without overriding nvim clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 -- Show diagnostics
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
