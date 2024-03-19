@@ -29,6 +29,7 @@ vim.keymap.set("n", "<leader>Y", '"+y$')
 
 -- Delete without overriding nvim clipboard
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
+vim.keymap.set("n", "<leader>D", '"_D')
 
 -- Show diagnostics
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
