@@ -22,6 +22,10 @@ sudo dnf install -y \
 	xclip \
 	zsh \
 	zsh-autosuggestions \
-	zsh-syntax-highlighting
+	zsh-syntax-highlighting \
+    g++ \ 
+    cmake \
+    gcc \
+    nodejs
 
 reboot
