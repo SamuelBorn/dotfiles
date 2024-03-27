@@ -11,13 +11,14 @@ SAVEHIST=10000
 # Plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/autojump/autojump.zsh
+eval "$(zoxide init zsh)"
 
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Useful Aliases
+alias cd="z"
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
 alias ls="ls -Ah --color=auto"

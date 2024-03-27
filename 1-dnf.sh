@@ -7,14 +7,17 @@ sudo dnf upgrade -y
 sudo dnf install -y \
 	adw-gtk3-theme \
 	akmod-nvidia \
-	autojump-zsh \
+	cmake \
 	flameshot \
+	g++ \ 
+	gcc \
 	gnome-pomodoro \
 	gnome-tweaks \
 	htop \
 	hunspell-de \
 	neofetch \
 	neovim \
+	nodejs \ 
 	ripgrep \
 	tldr \
 	trash-cli \
@@ -23,9 +26,6 @@ sudo dnf install -y \
 	zsh \
 	zsh-autosuggestions \
 	zsh-syntax-highlighting \
-    g++ \ 
-    cmake \
-    gcc \
-    nodejs
+    zoxide \
 
 reboot
