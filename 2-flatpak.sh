@@ -14,11 +14,9 @@ flatpak install -y \
 	com.github.tchx84.Flatseal \
 	com.google.Chrome \
 	com.mattjakeman.ExtensionManager \
-	com.mojang.Minecraft \
 	com.nextcloud.desktopclient.nextcloud \
 	com.spotify.Client \
 	io.github.celluloid_player.Celluloid \
-	io.gitlab.librewolf-community \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
 	org.gimp.GIMP \
