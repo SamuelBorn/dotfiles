@@ -1,8 +1,12 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+    },
     build = ':TSUpdate',
     version = "*",
     config = function()
+        ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup {
             highlight = { enable = true },
             indent = { enable = true },
@@ -16,6 +20,21 @@ return {
                     node_decremental = "<bs>",
                 },
             },
+            textobjects = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                    include_surrounding_whitespace = true,
+                    keymaps = {
+                        ["af"] = "@function.outer",
+                        ["if"] = "@function.inner",
+                        ["ac"] = "@class.outer",
+                        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+                    },
+                },
+            },
+
         }
     end
 }
