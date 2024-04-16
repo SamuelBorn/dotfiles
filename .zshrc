@@ -8,14 +8,14 @@ HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Plugins
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(zoxide init zsh)"
-
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Plugins
+eval "$(zoxide init zsh)"
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
 alias cd="z"
