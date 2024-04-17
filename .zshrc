@@ -21,8 +21,8 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias cd="z"
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
-alias ls="ls -Ah --color=auto"
-alias ll="ls -lh --color=auto"
+alias ls="eza -A"
+alias ll="eza -l"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
 function search(){sudo find / -iname "*$1*"}
