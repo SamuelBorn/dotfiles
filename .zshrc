@@ -1,16 +1,18 @@
-# p10k instant-prompt - stay at top
+# p10k prompt 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source ~/Repos/powerlevel10k/powerlevel10k.zsh-theme
+source ~/Repos/dotfiles/p10k.zsh
+
+# Case Insensitive Autocompletion
+autoload -Uz compinit && compinit -d ~/.config/.zcompdump
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Set history options
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
-
-# Case Insensitive Autocompletion
-autoload -Uz compinit && compinit -d ~/.config/.zcompdump
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Plugins
 eval "$(zoxide init zsh)"
@@ -19,10 +21,10 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
 alias cd="z"
+alias ls="eza -A"
+alias ll="eza -Al"
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
-alias ls="eza -A"
-alias ll="eza -l"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
 function search(){sudo find / -iname "*$1*"}
@@ -44,8 +46,3 @@ bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
-# p10k loading - stay at bot
-source ~/Repos/powerlevel10k/powerlevel10k.zsh-theme
-source ~/Repos/dotfiles/p10k.zsh
-
