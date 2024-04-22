@@ -38,3 +38,6 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Unhighlight search with /
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")

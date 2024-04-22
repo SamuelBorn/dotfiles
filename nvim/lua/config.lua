@@ -10,8 +10,6 @@ vim.opt.relativenumber = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.hlsearch = false
-
 vim.opt.signcolumn = 'no'
 vim.opt.scrolloff = 999
 
