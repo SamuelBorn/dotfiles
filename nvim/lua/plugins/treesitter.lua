@@ -4,7 +4,6 @@ return {
         'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
-    version = "*",
     config = function()
         ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup {
@@ -29,8 +28,7 @@ return {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
                         ["ac"] = "@class.outer",
-                        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-                        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+                        ["ic"] = "@class.inner",
                     },
                 },
             },
