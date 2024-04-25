@@ -18,9 +18,9 @@ return {
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
-            if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable(bufnr, true)
-            end
+            -- if client.server_capabilities.inlayHintProvider then
+            --     vim.lsp.inlay_hint.enable(bufnr, true)
+            -- end
         end
 
         require("mason").setup()
@@ -34,6 +34,7 @@ return {
                 "rust_analyzer",
                 "tsserver",
                 "yamlls",
+                "glsl_analyzer",
             },
         })
         require("mason-lspconfig").setup_handlers({
