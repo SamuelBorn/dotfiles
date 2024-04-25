@@ -23,7 +23,6 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias cd="z"
 alias ls="eza -A"
 alias ll="eza -Al"
-alias n="nvim -c 'Telescope find_files'"
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
