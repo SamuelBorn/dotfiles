@@ -44,6 +44,9 @@ chsh -s /bin/zsh
 # Neovim setup
 ln -s ~/Repos/dotfiles/nvim ~/.config/nvim
 
+# Lazygit setup
+ln -s ~/Repos/dotfiles/lazygit ~/.config/lazygit
+
 # GitHub add ssh key
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
 eval "$(ssh-agent -s)"
