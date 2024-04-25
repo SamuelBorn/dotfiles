@@ -21,6 +21,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
 alias cd="z"
+alias ..="cd .."
 alias ls="eza -A"
 alias ll="eza -Al"
 alias lg="lazygit"
