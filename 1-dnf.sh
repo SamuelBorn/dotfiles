@@ -28,6 +28,7 @@ sudo dnf install -y \
     neovim \
     nodejs \ 
     ripgrep \
+    stow \
     tldr \
     trash-cli \
     util-linux \
