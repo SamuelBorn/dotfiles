@@ -25,10 +25,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/ command 'gnome-session-quit --logout'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/logout/ binding '<Super>F2'
 
-# Open terminal here shortcut
-echo 'gnome-terminal' >~/.local/share/nautilus/scripts/Terminal
-chmod +x ~/.local/share/nautilus/scripts/Terminal
-echo 'F12 Terminal' >~/.config/nautilus/scripts-accels
+# Install dotfiles
+cd ~/Repos/dotfiles/home
+stow --target=$HOME .
 
 # Nerd Font
 mkdir -p ~/.local/share/fonts/JetBrainsMono
@@ -36,18 +35,10 @@ curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrai
 fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
 
-# ZSH setup
-ln -s ~/Repos/dotfiles/.zshrc ~/.zshrc
-git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/Repos/powerlevel10k
+# Change default shell to zsh
 chsh -s /bin/zsh
 
-# Neovim setup
-ln -s ~/Repos/dotfiles/nvim ~/.config/nvim
-
-# Lazygit setup
-ln -s ~/Repos/dotfiles/lazygit ~/.config/lazygit
-
-# GitHub add ssh key
+# GitHub add ssh key and default sign commits
 ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519

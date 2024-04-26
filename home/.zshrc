@@ -2,8 +2,8 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/Repos/powerlevel10k/powerlevel10k.zsh-theme
-source ~/Repos/dotfiles/p10k.zsh
+source ~/.config/p10k/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/p10k/p10k.zsh
 
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
