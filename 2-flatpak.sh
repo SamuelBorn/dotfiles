@@ -6,8 +6,6 @@ flatpak install -y \
 	org.gtk.Gtk3theme.adw-gtk3-dark \
 	\
 	com.discordapp.Discord \
-	com.dropbox.Client \
-	com.github.eneshecan.WhatsAppForLinux \
 	com.github.flxzt.rnote \
 	com.github.jeromerobert.pdfarranger \
 	com.github.johnfactotum.Foliate \
@@ -21,6 +19,5 @@ flatpak install -y \
 	net.ankiweb.Anki \
 	org.gimp.GIMP \
 	org.gnome.Geary \
-	org.kde.okular \
 	org.signal.Signal \
 	org.torproject.torbrowser-launcher
