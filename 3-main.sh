@@ -1,5 +1,9 @@
+# Read in user data
+read -p "Please enter your full name: " name
+read -p "Please enter your email address: " email
+
 # No password sudo
-echo 'born ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/born
+echo '%USER ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/%USER
 
 # Custom Shortcuts
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
@@ -39,15 +43,15 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 chsh -s /bin/zsh
 
 # GitHub add ssh key and default sign commits
-ssh-keygen -t ed25519 -C "samuelborn@outlook.de"
+ssh-keygen -t ed25519 -C "$email"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
 
 # Git setup with signing
-git config --global user.name "Samuel Born"
-git config --global user.email samuelborn@outlook.de
+git config --global user.name "$name"
+git config --global user.email "$email"
 git config --global core.editor nvim
 git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519.pub
@@ -60,7 +64,3 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # Input remapping: used for esc-caps and mouse buttons
 sudo dnf install -y input-remapper
 sudo systemctl enable --now input-remapper
-
-# Enable rpm fusion
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf config-manager --enable fedora-cisco-openh264
