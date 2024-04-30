@@ -1,7 +1,7 @@
 flatpak config --set extra-languages "de"
 
 # Regenerate list: flatpak list --app --columns=application | sed 's/$/ \\/' | sort
-flatpak install -y \
+flatpak install flathub -y \
 	org.gtk.Gtk3theme.adw-gtk3 \
 	org.gtk.Gtk3theme.adw-gtk3-dark \
 	\
