@@ -20,6 +20,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
+alias o="xdg-open"
 alias cd="z"
 alias ..="cd .."
 alias ls="eza -A"
