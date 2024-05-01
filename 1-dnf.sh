@@ -29,6 +29,7 @@ sudo dnf install -y \
 	lazygit \
 	neofetch \
 	neovim \
+    nextcloud-client \
 	nodejs \
 	ripgrep \
 	stow \

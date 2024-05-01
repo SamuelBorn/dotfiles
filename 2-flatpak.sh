@@ -12,7 +12,6 @@ flatpak install flathub -y \
 	com.github.tchx84.Flatseal \
 	com.google.Chrome \
 	com.mattjakeman.ExtensionManager \
-	com.nextcloud.desktopclient.nextcloud \
 	com.spotify.Client \
 	io.github.celluloid_player.Celluloid \
 	md.obsidian.Obsidian \
