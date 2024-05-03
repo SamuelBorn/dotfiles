@@ -44,6 +44,15 @@ return {
                     on_attach = on_attach,
                 })
             end,
+
+            -- special setup for clangd
+            ["clangd"] = function()
+                require("lspconfig").clangd.setup {
+                    cmd = { "clangd", "--offset-encoding=utf-16", "--header-insertion=never" },
+                    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+                    on_attach = on_attach,
+                }
+            end,
         })
     end,
 }
