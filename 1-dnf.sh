@@ -27,7 +27,7 @@ sudo dnf install -y \
 	htop \
 	hunspell-de \
 	lazygit \
-	neofetch \
+	fastfetch \
 	neovim \
     nextcloud-client \
 	nodejs \
