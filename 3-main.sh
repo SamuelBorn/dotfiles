@@ -3,7 +3,7 @@ read -p "Please enter your full name: " name
 read -p "Please enter your email address: " email
 
 # No password sudo
-echo '%USER ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/%USER
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 
 # Custom Shortcuts
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
