@@ -19,6 +19,7 @@ sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 sudo dnf install -y \
 	adw-gtk3-theme \
 	cmake \
+    cloc \
 	flameshot \
 	g++ \
 	gcc \
