@@ -23,35 +23,29 @@ return {
             -- end
         end
 
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "clangd",
-                "html",
-                "jsonls",
-                "lua_ls",
-                "pyright",
-                "rust_analyzer",
-                "tsserver",
-                "yamlls",
-                "glsl_analyzer",
+        local servers = {
+            clangd = {
+                cmd = { "clangd", "--offset-encoding=utf-16", "--header-insertion=never" },
             },
-        })
+            glsl_analyzer = {
+                filetypes = { "glsl", "comp" },
+            },
+            html = {},
+            jsonls = {},
+            lua_ls = {},
+            pyright = {},
+            rust_analyzer = {},
+            tsserver = {},
+            yamlls = {},
+        }
+
+        require("mason").setup()
+        require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
         require("mason-lspconfig").setup_handlers({
             function(server_name)
-                require("lspconfig")[server_name].setup({
-                    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                    on_attach = on_attach,
-                })
-            end,
-
-            -- special setup for clangd
-            ["clangd"] = function()
-                require("lspconfig").clangd.setup {
-                    cmd = { "clangd", "--offset-encoding=utf-16", "--header-insertion=never" },
-                    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                    on_attach = on_attach,
-                }
+                servers[server_name].capabilities = require("cmp_nvim_lsp").default_capabilities()
+                servers[server_name].on_attach = on_attach
+                require("lspconfig")[server_name].setup(servers[server_name])
             end,
         })
     end,
