@@ -17,19 +17,16 @@ return {
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
-
-            -- if client.server_capabilities.inlayHintProvider then
-            --     vim.lsp.inlay_hint.enable(bufnr, true)
-            -- end
         end
+
+        -- add .comp files to glsl filetype
+        vim.filetype.add({ extension = { comp = "glsl" } });
 
         local servers = {
             clangd = {
                 cmd = { "clangd", "--offset-encoding=utf-16", "--header-insertion=never" },
             },
-            glsl_analyzer = {
-                filetypes = { "glsl", "comp" },
-            },
+            glsl_analyzer = {},
             html = {},
             jsonls = {},
             lua_ls = {},
