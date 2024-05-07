@@ -30,8 +30,8 @@ alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/ac
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
-function search(){sudo find / -iname "*$1*"}
-function searchhere(){sudo find . -iname "*$1*"}
+function f/(){sudo find / -iname "*$1*"}
+function f.(){sudo find . -iname "*$1*"}
 function md(){mkdir -p "$1" && cd "$1"}
 
 # Path
