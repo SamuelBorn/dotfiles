@@ -1,5 +1,5 @@
 -- Useful custom keymaps
-vim.keymap.set("n", "<leader>w", vim.cmd.write)
+vim.keymap.set("n", "<leader>w", "<cmd>wa<cr>")
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
