@@ -11,7 +11,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.signcolumn = 'no'
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+
+vim.opt.cursorline = true
 
 vim.opt.wrap = false
 
