@@ -38,5 +38,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
--- Unhighlight search 
+-- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Better j k in wrapped lines
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
