@@ -8,16 +8,27 @@ source ~/.config/p10k/p10k.zsh
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Set history options
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Plugins
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^y' autosuggest-accept
 
 # Useful Aliases
 alias o="xdg-open"
