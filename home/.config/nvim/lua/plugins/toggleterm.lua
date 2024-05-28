@@ -2,7 +2,13 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = function()
-        require("toggleterm").setup({ direction = "vertical", size = vim.o.columns * 0.4 })
+        require("toggleterm").setup({
+            direction = "vertical",
+            size = vim.o.columns * 0.4,
+            on_open = function()
+                vim.cmd("startinsert!")
+            end,
+        })
 
         Lazygit = require("toggleterm.terminal").Terminal:new({
             cmd = "lazygit",
@@ -13,6 +19,7 @@ return {
                 vim.keymap.set("t", "<Esc>", "<Esc>", { buffer = term.bufnr })
             end,
         })
+
         vim.keymap.set({ "n", "t" }, "<C-g>", "<cmd>lua Lazygit:toggle()<CR>")
         vim.keymap.set({ "n", "t" }, "<C-\\>", "<cmd>ToggleTerm<CR>")
     end
