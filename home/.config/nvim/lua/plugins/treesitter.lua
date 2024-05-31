@@ -19,6 +19,7 @@ return {
                     node_decremental = "<bs>",
                 },
             },
+            -- wefewfewf
             textobjects = {
                 select = {
                     enable = true,
@@ -27,8 +28,8 @@ return {
                     keymaps = {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
-                        ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
+                        ["ac"] = "@comment.outer",
+                        ["ic"] = "@comment.inner",
                         ["ai"] = "@conditional.outer",
                         ["ii"] = "@conditional.inner",
                     },
