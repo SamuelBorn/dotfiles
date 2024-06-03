@@ -12,7 +12,7 @@ sudo dnf copr enable atim/lazygit -y
 sudo dnf upgrade -y
 
 # Nvidia and Multimedia Configuration
-sudo dnf install akmod-nvidia nvidia-vaapi-driver
+sudo dnf install akmod-nvidia nvidia-vaapi-driver libva-utils vdpauinfo
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 
 # Useful packages
