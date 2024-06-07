@@ -15,6 +15,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 vim.opt.wrap = false
+vim.opt.linebreak = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
