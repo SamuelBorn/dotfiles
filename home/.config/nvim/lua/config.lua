@@ -22,6 +22,9 @@ vim.opt.splitbelow = true
 
 vim.opt.breakindent = true
 
+-- add .comp files to glsl filetype
+vim.filetype.add({ extension = { comp = "glsl" } });
+
 -- Set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

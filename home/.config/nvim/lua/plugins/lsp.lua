@@ -20,8 +20,6 @@ return {
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
         end
 
-        -- add .comp files to glsl filetype
-        vim.filetype.add({ extension = { comp = "glsl" } });
 
         local servers = {
             clangd = {
