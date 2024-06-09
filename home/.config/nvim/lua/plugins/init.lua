@@ -1,6 +1,5 @@
 -- one-line plugin imports
 return {
-    { 'numToStr/Comment.nvim',      opts = {} },
     { 'echasnovski/mini.surround',  opts = {} },
     { 'nvim-tree/nvim-web-devicons' },
     {
