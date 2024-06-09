@@ -17,7 +17,6 @@ return {
             vim.keymap.set("n", "gt", require("telescope.builtin").lsp_type_definitions)
             vim.keymap.set("n", "gh", vim.lsp.buf.declaration)
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover)
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
         end
 

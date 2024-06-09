@@ -30,11 +30,6 @@ vim.keymap.set("n", "<leader>Y", '"+y$')
 -- Delete without overriding nvim clipboard
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"_d')
 
--- Show diagnostics
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
