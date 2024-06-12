@@ -15,13 +15,13 @@ Just grab the dotfiles you need or run the scripts below to get the whole setup.
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone --recursive https://github.com/SamuelBorn/dotfiles.git
+   git clone --recursive https://github.com/SamuelBorn/dotfiles.git ~/Repos/dotfiles
    ```
 
 1. Navigate to the cloned directory:
 
    ```bash
-   cd dotfiles-fedora
+   cd ~/Repos/dotfiles
    ```
 
 1. Adept the scripts to fit four own needs. Delete stuff, add stuff, change stuff.
@@ -32,5 +32,5 @@ Just grab the dotfiles you need or run the scripts below to get the whole setup.
    ./1-dnf.sh
    ./2-flatpak.sh
    ./3-main.sh
-   ./4-desktop.sh   # (optional)
+   ./4-desktop.sh   # (very optional: personal settings)
    ```
