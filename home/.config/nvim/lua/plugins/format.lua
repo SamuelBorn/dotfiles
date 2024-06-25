@@ -5,9 +5,10 @@ return {
         require("conform").setup({
             formatters_by_ft = {
                 javascript = { { "prettierd", "prettier" } },
-                markdown = { "mdformat" },
-                python = { "isort", "black" },
-                sh = { "shfmt" },
+                json       = { { "prettierd", "prettier" } },
+                markdown   = { "mdformat" },
+                python     = { "isort", "black" },
+                sh         = { "shfmt" },
             }
         })
         vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_fallback = true }) end)
