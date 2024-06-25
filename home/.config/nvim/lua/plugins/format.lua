@@ -11,7 +11,7 @@ return {
                 sh         = { "shfmt" },
             }
         })
-        vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_fallback = true }) end)
+        vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_format = "prefer" }) end)
         require("mason-conform").setup()
     end
 }
