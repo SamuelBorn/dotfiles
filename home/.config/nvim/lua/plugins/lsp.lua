@@ -31,7 +31,6 @@ return {
             },
             glsl_analyzer = {},
             html = {},
-            jsonls = {},
             lua_ls = {},
             pyright = {},
             rust_analyzer = {},
