@@ -1,3 +1,4 @@
+-- Restore cursor position when opening files
 vim.cmd([[
     augroup RestoreCursor
       autocmd!
