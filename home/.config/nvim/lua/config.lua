@@ -11,16 +11,16 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.signcolumn = 'no'
+
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 vim.opt.wrap = false
 vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
-vim.opt.breakindent = true
 
 -- add .comp files to glsl filetype
 vim.filetype.add({ extension = { comp = "glsl" } });
