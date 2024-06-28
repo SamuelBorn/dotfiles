@@ -24,3 +24,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+-- write changes when opening terminal
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
+    group = vim.api.nvim_create_augroup("term_write", {}),
+    callback = function()
+        vim.cmd("wa")
+    end,
+})
