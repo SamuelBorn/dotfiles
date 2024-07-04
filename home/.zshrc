@@ -55,8 +55,6 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-
-
 function gitBranch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
@@ -66,27 +64,22 @@ function gitUpstreamPosition() {
     if [ -n "$commitCount" ]; then
        local behindCount=$(echo "$commitCount" | cut -f1)
        local aheadCount=$(echo "$commitCount" | cut -f2)
-       if [ "$behindCount" != "0" ]; then echo " ${behindCount}↓"; fi
-       if [ "$aheadCount" != "0" ]; then echo " ${aheadCount}↑"; fi
+       if [ "$behindCount" != "0" ]; then echo " %F{red}↓${behindCount}%f"; fi
+       if [ "$aheadCount" != "0" ]; then echo " %F{red}↑${aheadCount}%f"; fi
     fi
 }
 
 function gitStatus() {
-    local gitstatus=$(git status --porcelain 2> /dev/null)
+    local gitstatus=$(git status --porcelain --ignore-submodules=dirty 2> /dev/null)
     if [ -n "$gitstatus" ]; then
          local staged=$(echo "$gitstatus" | grep '^[^? ]' | wc -l)
          local modified=$(echo "$gitstatus" | grep '^.[^? ]' | wc -l)
          local untracked=$(echo "$gitstatus" | grep '^[?][?]' | wc -l)
-
-         local statusString=""
-         if [ "$staged" != "0" ]; then statusString="$statusString+$staged"; fi
-         if [ "$modified" != "0" ]; then statusString="$statusString!$modified"; fi
-         if [ "$untracked" != "0" ]; then statusString="$statusString?$untracked"; fi
-         echo "$statusString"
+         if [ "$staged" != "0" ]; then echo " %F{green}+$staged%f"; fi
+         if [ "$modified" != "0" ]; then echo " %F{yellow}!$modified%f"; fi
+         if [ "$untracked" != "0" ]; then echo " %F{blue}?$untracked%f"; fi
     fi
 }
-
-
 
 precmd() { precmd() { echo } }
 PROMPT="%F{blue}%~%f \$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)
