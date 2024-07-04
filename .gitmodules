@@ -1,3 +1,0 @@
-[submodule "home/.config/p10k/powerlevel10k"]
-	path = home/.config/p10k/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
