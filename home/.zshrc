@@ -87,4 +87,7 @@ function gitStatus() {
 }
 
 
-PROMPT="\$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)"
+
+precmd() { precmd() { echo } }
+PROMPT="%F{blue}%~%f \$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)
+$ "
