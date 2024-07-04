@@ -4,8 +4,6 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 
 # Set history options
-bindkey "^p" history-search-backward
-bindkey "^n" history-search-forward
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -16,7 +14,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-setopt prompt_subst
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 
 # Plugins
 eval "$(zoxide init zsh)"
@@ -28,8 +27,6 @@ bindkey "^y" autosuggest-accept
 alias o="xdg-open"
 alias cd="z"
 alias ..="cd .."
-alias ls="eza -A"
-alias ll="eza -Al"
 alias lg="lazygit"
 alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
@@ -55,6 +52,7 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Git Prompt
 function gitBranch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
@@ -82,5 +80,6 @@ function gitStatus() {
 }
 
 precmd() { precmd() { echo } }
+setopt prompt_subst
 PROMPT="%F{blue}%~%f \$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)
 $ "
