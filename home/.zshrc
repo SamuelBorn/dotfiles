@@ -1,18 +1,11 @@
-# p10k prompt 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-source ~/.config/p10k/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.config/p10k/p10k.zsh
-
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 
 # Set history options
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey "^p" history-search-backward
+bindkey "^n" history-search-forward
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -23,12 +16,13 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt prompt_subst
 
 # Plugins
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^y' autosuggest-accept
+bindkey "^y" autosuggest-accept
 
 # Useful Aliases
 alias o="xdg-open"
@@ -56,7 +50,41 @@ export EDITOR=nvim
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
 export WORDCHARS={}
-bindkey '^H' backward-kill-word
-bindkey '^[[3;5~' kill-word
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+
+
+function gitBranch() {
+    git rev-parse --abbrev-ref HEAD 2> /dev/null
+}
+
+function gitUpstreamPosition() {
+    local commitCount=$(git rev-list --count --left-right @{upstream}...HEAD 2> /dev/null)
+    if [ -n "$commitCount" ]; then
+       local behindCount=$(echo "$commitCount" | cut -f1)
+       local aheadCount=$(echo "$commitCount" | cut -f2)
+       if [ "$behindCount" != "0" ]; then echo " ${behindCount}↓"; fi
+       if [ "$aheadCount" != "0" ]; then echo " ${aheadCount}↑"; fi
+    fi
+}
+
+function gitStatus() {
+    local gitstatus=$(git status --porcelain 2> /dev/null)
+    if [ -n "$gitstatus" ]; then
+         local staged=$(echo "$gitstatus" | grep '^[^? ]' | wc -l)
+         local modified=$(echo "$gitstatus" | grep '^.[^? ]' | wc -l)
+         local untracked=$(echo "$gitstatus" | grep '^[?][?]' | wc -l)
+
+         local statusString=""
+         if [ "$staged" != "0" ]; then statusString="$statusString+$staged"; fi
+         if [ "$modified" != "0" ]; then statusString="$statusString!$modified"; fi
+         if [ "$untracked" != "0" ]; then statusString="$statusString?$untracked"; fi
+         echo "$statusString"
+    fi
+}
+
+
+PROMPT="\$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)"
