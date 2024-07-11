@@ -2,13 +2,7 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = function()
-        require("toggleterm").setup({
-            direction = "vertical",
-            size = vim.o.columns * 0.4,
-            on_open = function()
-                vim.cmd("startinsert!")
-            end,
-        })
+        require("toggleterm").setup({ direction = "vertical", size = vim.o.columns * 0.4 })
 
         Lazygit = require("toggleterm.terminal").Terminal:new({
             cmd = "lazygit",
