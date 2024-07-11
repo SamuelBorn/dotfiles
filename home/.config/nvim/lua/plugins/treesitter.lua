@@ -19,7 +19,6 @@ return {
                     node_decremental = "<bs>",
                 },
             },
-            -- wefewfewf
             textobjects = {
                 select = {
                     enable = true,
