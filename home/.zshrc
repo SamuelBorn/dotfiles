@@ -1,34 +1,26 @@
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
-zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 
 # Set history options
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
-HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-bindkey "^p" history-search-backward
-bindkey "^n" history-search-forward
 
 # Plugins
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey "^y" autosuggest-accept
 
 # Useful Aliases
 alias o="xdg-open"
 alias cd="z"
 alias ..="cd .."
 alias lg="lazygit"
-alias venv="source .venv/bin/activate || virtualenv .venv && source .venv/bin/activate"
+alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias dnf="sudo dnf"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
