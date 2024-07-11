@@ -79,7 +79,6 @@ function gitStatus() {
     fi
 }
 
-precmd() { precmd() { echo } }
 setopt prompt_subst
-PROMPT="%F{blue}%~%f \$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)
-$ "
+PROMPT="%F{blue}%(5~|…/%4~|%~)%f ❯ "
+RPROMPT="\$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)"
