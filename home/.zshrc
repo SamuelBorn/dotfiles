@@ -6,8 +6,8 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 HISTFILE=~/.config/zsh_histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
-setopt sharehistory
+setopt append_history
+setopt share_history
 setopt hist_ignore_all_dups
 
 # Plugins
@@ -34,11 +34,10 @@ path+=(~/.cargo/bin)
 export PATH
 
 # Environment variables 
-export VISUAL=nvim
 export EDITOR=nvim
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
-export WORDCHARS={}
+WORDCHARS={}
 bindkey "^H" backward-kill-word
 bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
@@ -50,12 +49,12 @@ function gitBranch() {
 }
 
 function gitUpstreamPosition() {
-    local commitCount=$(git rev-list --count --left-right @{upstream}...HEAD 2> /dev/null)
-    if [ -n "$commitCount" ]; then
-       local behindCount=$(echo "$commitCount" | cut -f1)
-       local aheadCount=$(echo "$commitCount" | cut -f2)
-       if [ "$behindCount" != "0" ]; then echo " %F{red}↓${behindCount}%f"; fi
-       if [ "$aheadCount" != "0" ]; then echo " %F{red}↑${aheadCount}%f"; fi
+    local upstream_position=$(git rev-list --count --left-right @{upstream}...HEAD 2> /dev/null)
+    if [ -n "$upstream_position" ]; then
+       local behind=$(echo "$upstream_position" | cut -f1)
+       local ahead=$(echo "$upstream_position" | cut -f2)
+       if [ "$behind" != "0" ]; then echo " %F{red}↓${behind}%f"; fi
+       if [ "$ahead" != "0" ]; then echo " %F{red}↑${ahead}%f"; fi
     fi
 }
 
@@ -71,6 +70,7 @@ function gitStatus() {
     fi
 }
 
+unsetopt prompt_sp
 setopt prompt_subst
 PROMPT="%F{blue}%(5~|…/%4~|%~)%f ❯ "
 RPROMPT="\$(gitBranch)\$(gitUpstreamPosition)\$(gitStatus)"
