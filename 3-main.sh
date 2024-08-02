@@ -53,6 +53,9 @@ git config --global commit.gpgsign true
 git config --global pull.rebase true
 git config --global rebase.autoStash true
 
+# Disable alert bell
+gsettings set org.gnome.desktop.wm.preferences audible-bell false
+
 # Theme GTK 3 apps
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
