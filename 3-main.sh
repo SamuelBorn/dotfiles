@@ -1,5 +1,4 @@
 # Read in user data
-read -p "Please enter your full name: " name
 read -p "Please enter your email address: " email
 
 # No password sudo
@@ -44,7 +43,7 @@ cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 xdg-open "https://github.com/settings/keys"
 
 # Git setup with signing
-git config --global user.name "$name"
+git config --global user.name "$(getent passwd $USER | cut -d ':' -f 5)"
 git config --global user.email "$email"
 git config --global core.editor nvim
 git config --global gpg.format ssh
