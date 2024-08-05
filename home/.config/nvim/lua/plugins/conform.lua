@@ -4,9 +4,9 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
-                javascript = { { "prettierd", "prettier" } },
-                json       = { { "prettierd", "prettier" } },
-                markdown   = { "mdformat" },
+                javascript = { "prettierd" },
+                json       = { "prettierd" },
+                markdown   = { "prettierd" },
                 python     = { "isort", "black" },
                 sh         = { "shfmt" },
             }
