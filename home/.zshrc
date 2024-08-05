@@ -33,6 +33,7 @@ alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
 function f/(){sudo find / -iname "*$1*"}
 function f.(){sudo find . -iname "*$1*"}
 function md(){mkdir -p "$1" && cd "$1"}
+function pdf(){find . -name "*.pdf" | parallel pdfgrep --color always -Hni  "$1"}
 
 # Path
 path+=(/var/lib/flatpak/exports/bin)
