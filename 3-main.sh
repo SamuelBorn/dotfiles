@@ -11,7 +11,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Super>b']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys help "[]"
 gsettings set org.gnome.settings-daemon.plugins.media-keys suspend "['<Super>F1']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys power "['<Super>F2']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/ name 'Launch Terminal'
@@ -54,6 +53,9 @@ git config --global rebase.autoStash true
 
 # Disable alert bell
 gsettings set org.gnome.desktop.wm.preferences audible-bell false
+
+# Disable logout prompt
+gsettings set org.gnome.SessionManager logout-prompt false
 
 # Theme GTK 3 apps
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
