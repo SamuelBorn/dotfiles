@@ -21,14 +21,16 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
+alias e="nvim"
+alias f='nvim "$(fzf)"'
+alias g="lazygit"
+alias i="sudo dnf install"
 alias o="xdg-open"
+alias u="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias cd="z"
 alias ll="ls -Ahl"
 alias ..="cd .."
-alias lg="lazygit"
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
-alias up="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
-alias dnf="sudo dnf"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
 function f/(){sudo find / -iname "*$1*"}
 function f.(){sudo find . -iname "*$1*"}
