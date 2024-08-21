@@ -9,6 +9,7 @@ return {
                 markdown   = { "prettierd" },
                 python     = { "isort", "black" },
                 sh         = { "shfmt" },
+                zsh        = { "beautysh" },
             }
         })
         vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_format = "prefer" }) end)
