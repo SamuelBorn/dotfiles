@@ -21,20 +21,19 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
-alias e="nvim"
-alias f='nvim "$(fzf)"'
+f/() { sudo find / -iname "*$1*" }
+f.() { sudo find . -iname "*$1*" }
+md() { mkdir "$1" && cd "$1" }
+o() { [ ! -f "$1" ] || (file -i "$1" | grep -qE 'text|inode') && nvim "$1" || xdg-open "$1" }
+alias f='o "$(fzf)"'
 alias g="lazygit"
 alias i="sudo dnf install"
-alias o="xdg-open"
 alias u="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias cd="z"
 alias ll="ls -Ahl"
 alias ..="cd .."
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
-function f/(){sudo find / -iname "*$1*"}
-function f.(){sudo find . -iname "*$1*"}
-function md(){mkdir "$1" && cd "$1"}
 
 # Path
 path+=(/var/lib/flatpak/exports/bin)
@@ -42,7 +41,7 @@ path+=(~/.cargo/bin)
 path+=(~/.local/bin)
 export PATH
 
-# Environment variables 
+# Environment variables
 export EDITOR=nvim
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
