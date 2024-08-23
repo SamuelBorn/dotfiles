@@ -21,10 +21,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
-f/() { sudo find / -iname "*$1*" }
-f.() { sudo find . -iname "*$1*" }
-md() { mkdir "$1" && cd "$1" }
-o() { [ ! -f "$1" ] || (file -i "$1" | grep -qE 'text|inode') && nvim "$1" || xdg-open "$1" }
 alias f='o "$(fzf)"'
 alias g="lazygit"
 alias i="sudo dnf install"
@@ -34,6 +30,17 @@ alias ll="ls -Ahl"
 alias ..="cd .."
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
+function md() { mkdir "$1" && cd "$1" }
+function f/() { sudo find / -iname "*$1*" }
+function f.() { sudo find . -iname "*$1*" }
+function o() {
+    # Open new and appropriate files with the editor, otherwise open in default program
+    if [ ! -e "$1" ] || file -i "$1" | grep -qE 'text|inode'; then
+        $EDITOR "$1"
+    else
+        xdg-open "$1"
+    fi
+}
 
 # Path
 path+=(/var/lib/flatpak/exports/bin)
