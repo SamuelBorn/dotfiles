@@ -21,7 +21,6 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Useful Aliases
-alias f='o "$(fzf)"'
 alias g="lazygit"
 alias i="sudo dnf install"
 alias u="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
@@ -34,14 +33,15 @@ function md() { mkdir "$1" && cd "$1" }
 function f/() { sudo find / -iname "*$1*" }
 function f.() { sudo find . -iname "*$1*" }
 function o() {
-    # Open new and appropriate files with the editor, otherwise open in default program
-    if [ ! -e "$1" ] || file -i "$1" | grep -qE 'text|inode'; then
+    if [ $# -eq 0 ]; then
+        o "$(fzf)"
+    elif [ ! -e "$1" ] || file -i "$1" | grep -qE 'text|inode|application'; then
         $EDITOR "$1"
     else
         xdg-open "$1"
     fi
 }
-alias nvim="echo 'USE o!'"
+alias nvim="echo 'DO NOT USE THIS!'"
 
 # Path
 path+=(/var/lib/flatpak/exports/bin)
