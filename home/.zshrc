@@ -27,21 +27,20 @@ alias u="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
 alias cd="z"
 alias ll="ls -Ahl"
 alias ..="cd .."
+alias nvim="echo 'DO NOT USE THIS!'"
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
 function md() { mkdir "$1" && cd "$1" }
-function f/() { sudo find / -iname "*$1*" }
-function f.() { sudo find . -iname "*$1*" }
+function f() { sudo find "$1" -iname "*$2*" }
 function o() {
     if [ $# -eq 0 ]; then
         o "$(fzf)"
-    elif [ ! -e "$1" ] || file -i "$1" | grep -qE 'text|inode|application'; then
+    elif [ ! -e "$1" ] || xdg-mime query filetype "$1" | grep -q 'text'; then
         $EDITOR "$1"
     else
         xdg-open "$1"
     fi
 }
-alias nvim="echo 'DO NOT USE THIS!'"
 
 # Path
 path+=(/var/lib/flatpak/exports/bin)
