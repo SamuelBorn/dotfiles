@@ -11,7 +11,8 @@ return {
         require("telescope").load_extension("smart_open")
 
         vim.keymap.set("n", "<leader><leader>", require("telescope").extensions.smart_open.smart_open)
-        vim.keymap.set("n", "<leader>/", require("telescope.builtin").live_grep)
+        vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files)
+        vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep)
         vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags)
     end,
 }
