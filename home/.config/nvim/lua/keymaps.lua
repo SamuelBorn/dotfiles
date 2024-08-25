@@ -33,6 +33,9 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"_d')
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
+-- Save file with sudo permissions
+vim.keymap.set("c", "w!!", "w !sudo tee > /dev/null %")
+
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 

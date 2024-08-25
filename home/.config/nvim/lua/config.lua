@@ -22,6 +22,8 @@ vim.opt.breakindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.updatetime = 250
+
 -- add .comp files to glsl filetype
 vim.filetype.add({ extension = { comp = "glsl" } });
 
