@@ -19,9 +19,7 @@ return {
 
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
-            vim.keymap.set("n", "<leader>i", function()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end)
+            vim.lsp.inlay_hint.enable()
         end
 
 
