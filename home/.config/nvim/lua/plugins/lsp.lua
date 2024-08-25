@@ -34,6 +34,7 @@ return {
             rust_analyzer = {},
             tsserver = {},
             yamlls = {},
+            texlab = {},
         }
 
         require("mason").setup()
