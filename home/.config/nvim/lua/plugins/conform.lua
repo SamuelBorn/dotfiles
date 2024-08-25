@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    dependencies = { "zapling/mason-conform.nvim", "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
+    dependencies = { "williamboman/mason.nvim", "zapling/mason-conform.nvim" },
     config = function()
         require("conform").setup({
             formatters_by_ft = {
