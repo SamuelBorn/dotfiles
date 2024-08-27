@@ -17,30 +17,33 @@ sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 
 # Useful packages
 sudo dnf install -y \
-	adw-gtk3-theme \
-	cmake \
+    adw-gtk3-theme \
     cloc \
-	flameshot \
-	g++ \
-	gcc \
-	gnome-pomodoro \
-	gnome-tweaks \
-	htop \
-	hunspell-de \
-	lazygit \
-	fastfetch \
-	neovim \
+    cmake \
+    fastfetch \
+    flameshot \
+    g++ \
+    gcc \
+    gnome-pomodoro \
+    gnome-shell-extension-caffeine \
+    gnome-tweaks \
+    htop \
+    hunspell-de \
+    kitty \
+    lazygit \
+    neovim \
     nextcloud-client \
-	nodejs \
-	ripgrep \
-	stow \
-	tldr \
-	trash-cli \
-	util-linux \
-	xclip \
-	zoxide \
-	zsh \
-	zsh-autosuggestions \
-	zsh-syntax-highlighting
+    nodejs \
+    prename \
+    ripgrep \
+    stow \
+    tldr \
+    trash-cli \
+    util-linux \
+    xclip \
+    zoxide \
+    zsh \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
 
 reboot
