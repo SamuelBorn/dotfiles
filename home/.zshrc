@@ -29,8 +29,8 @@ alias ..="cd .."
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
 function f() { sudo find "$1" -iname "*$2*" }
-function n() { nvim "${1:-'$(fzf)'}" }
-function o() { xdg-open "${1:-'$(fzf)'}" }
+function n() { nvim "${1:-"$(fzf)"}" }
+function o() { xdg-open "${1:-"$(fzf)"}" }
 function md() { mkdir "$1" && cd "$1" }
 
 # Path
