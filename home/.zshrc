@@ -22,7 +22,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Useful Aliases
 alias g="lazygit"
 alias i="sudo dnf install"
-alias u="gnome-terminal --tab -- flatpak update -y && sudo dnf upgrade -y"
+alias u="flatpak update -y > /dev/null & sudo dnf upgrade -y"
 alias cd="z"
 alias ll="ls -Ahl"
 alias ..="cd .."
