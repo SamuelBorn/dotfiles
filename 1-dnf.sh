@@ -21,6 +21,7 @@ sudo dnf install -y \
     cloc \
     cmake \
     fastfetch \
+    fd \
     flameshot \
     g++ \
     gcc \
