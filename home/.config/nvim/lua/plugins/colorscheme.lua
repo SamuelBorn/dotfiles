@@ -5,7 +5,7 @@ return {
         priority = 1000,
         config = function()
             require("catppuccin").setup({
-                transparent_background = true,
+                -- transparent_background = true,
             })
             -- vim.cmd.colorscheme("catppuccin")
         end
@@ -21,7 +21,7 @@ return {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("gruvbox")
+            vim.cmd.colorscheme("gruvbox")
         end
     },
     {
@@ -33,7 +33,7 @@ return {
                     -- transparent = true,
                 },
             })
-            vim.cmd.colorscheme("github_dark_default")
+            -- vim.cmd.colorscheme("github_dark_default")
         end
     },
 }
