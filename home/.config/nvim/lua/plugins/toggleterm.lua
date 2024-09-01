@@ -3,7 +3,10 @@ return {
     config = function()
         require("toggleterm").setup({
             direction = "vertical",
-            size = vim.o.columns * 0.4,
+            size = function() return vim.o.columns * 0.381966 end,
+            persist_size = false,
+            persist_mode = false,
+            shade_terminals = false,
             open_mapping = "<C-\\>",
         })
 
