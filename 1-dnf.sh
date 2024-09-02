@@ -32,6 +32,7 @@ sudo dnf install -y \
     hunspell-de \
     kitty \
     lazygit \
+    mpv \
     neovim \
     nextcloud-client \
     nodejs \

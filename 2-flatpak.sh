@@ -13,7 +13,6 @@ flatpak install flathub -y \
 	com.google.Chrome \
 	com.mattjakeman.ExtensionManager \
 	com.spotify.Client \
-	io.github.celluloid_player.Celluloid \
 	md.obsidian.Obsidian \
 	net.ankiweb.Anki \
 	org.gimp.GIMP \
