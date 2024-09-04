@@ -40,6 +40,7 @@ export PATH
 
 # Environment variables
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
 WORDCHARS={}
