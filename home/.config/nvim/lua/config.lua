@@ -24,6 +24,8 @@ vim.opt.splitbelow = true
 
 vim.opt.updatetime = 250
 
+vim.opt.spelllang = "en_us,de_de"
+
 -- add .comp files to glsl filetype
 vim.filetype.add({ extension = { comp = "glsl" } });
 
