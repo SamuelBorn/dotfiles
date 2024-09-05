@@ -7,6 +7,8 @@ return {
                 javascript = { "prettierd" },
                 json       = { "prettierd" },
                 markdown   = { "prettierd" },
+                html       = { "prettierd" },
+                css        = { "prettierd" },
                 python     = { "isort", "black" },
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
