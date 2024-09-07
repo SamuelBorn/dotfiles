@@ -32,9 +32,9 @@ return {
             lua_ls = {},
             pyright = {},
             rust_analyzer = {},
-            tsserver = {},
             yamlls = {},
             texlab = {},
+            rnix = {},
         }
 
         require("mason").setup()
