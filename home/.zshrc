@@ -5,19 +5,19 @@ source ~/.config/p10k/.p10k.zsh
 
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
-zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
-
-# Set history options
-HISTFILE=~/.config/zsh_histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt share_history
-setopt hist_ignore_all_dups
 
 # Plugins
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set options
+HISTFILE=~/.config/zsh_histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
+setopt hist_ignore_all_dups
+setopt no_case_glob
 
 # Useful Aliases
 alias g="lazygit"
