@@ -29,6 +29,7 @@ alias ll="ls -Ahl"
 alias ..="cd .."
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="cd ~/Repos/dotfiles/home && stow --target=$HOME . && cd -"
+alias pdflatex="texfot pdflatex"
 function n() { nvim "${1:-"$(fzf)"}" }
 function o() { xdg-open "${1:-"$(fzf)"}" 2> /dev/null}
 function md() { mkdir "$1" && cd "$1" }
