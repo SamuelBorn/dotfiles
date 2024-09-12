@@ -5,6 +5,7 @@ return {
         { "danielfalk/smart-open.nvim",               dependencies = "kkharji/sqlite.lua" },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+    event = "VeryLazy",
     config = function()
         require('telescope').setup({ extensions = { smart_open = { match_algorithm = "fzf" } } })
         require("telescope").load_extension("fzf")
