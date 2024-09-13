@@ -13,7 +13,7 @@ return {
                 python     = { "isort", "black" },
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
-                tex      = { "latexindent" },
+                tex        = { "latexindent" },
             }
         })
         vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_format = "fallback" }) end)

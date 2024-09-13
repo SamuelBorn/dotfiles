@@ -1,5 +1,4 @@
--- one-line plugin imports
 return {
-    { 'echasnovski/mini.surround', opts = {} },
-    { 'github/copilot.vim' },
+    { 'echasnovski/mini.surround', opts = {}, event = "VeryLazy" },
+    { 'github/copilot.vim', event = "VeryLazy" },
 }
