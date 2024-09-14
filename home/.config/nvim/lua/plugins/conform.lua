@@ -14,6 +14,7 @@ return {
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
                 tex        = { "latexindent" },
+                lua        = { "stylua" },
             }
         })
         vim.keymap.set("n", "<leader>l", function() require('conform').format({ lsp_format = "fallback" }) end)
