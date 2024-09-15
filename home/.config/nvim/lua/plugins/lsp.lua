@@ -6,7 +6,6 @@ return {
         { "folke/neodev.nvim", opts = {} },
         { "j-hui/fidget.nvim", opts = {} },
     },
-    event = "VeryLazy",
     config = function()
         local on_attach = function(client, bufnr)
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
