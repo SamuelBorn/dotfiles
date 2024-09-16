@@ -1,10 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        { "folke/neodev.nvim", opts = {} },
-        { "j-hui/fidget.nvim", opts = {} },
+        { "williamboman/mason.nvim", opts = {} },
+        { "williamboman/mason-lspconfig.nvim" },
+        { "folke/neodev.nvim",       opts = {} },
+        { "j-hui/fidget.nvim",       opts = {} },
     },
     config = function()
         local on_attach = function(client, bufnr)
@@ -37,7 +37,6 @@ return {
             rnix = {},
         }
 
-        require("mason").setup()
         require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
         require("mason-lspconfig").setup_handlers({
             function(server_name)
