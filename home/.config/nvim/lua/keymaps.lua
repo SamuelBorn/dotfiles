@@ -40,7 +40,7 @@ vim.keymap.set("c", "w!!", "w !sudo tee % > /dev/null")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Select all
-vim.keymap.set({ "n", "x" }, "<C-a>", "ggVG")
+vim.keymap.set({ "i", "n", "x" }, "<C-a>", "<Esc>ggVG")
 
 -- Better j k in wrapped lines
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
