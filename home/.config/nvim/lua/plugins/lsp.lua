@@ -1,10 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "williamboman/mason.nvim", opts = {} },
+        { "williamboman/mason.nvim",          opts = {} },
         { "williamboman/mason-lspconfig.nvim" },
-        { "folke/neodev.nvim",       opts = {} },
-        { "j-hui/fidget.nvim",       opts = {} },
+        { "folke/neodev.nvim",                opts = {} },
+        { "j-hui/fidget.nvim",                opts = {} },
     },
     config = function()
         local on_attach = function(client, bufnr)
@@ -19,9 +19,10 @@ return {
 
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
-            vim.lsp.inlay_hint.enable()
+            -- shortcut to enable inlay hints with leader i
+            vim.keymap.set("n", "<leader>i",
+                function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
         end
-
 
         local servers = {
             clangd = {
