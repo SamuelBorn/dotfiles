@@ -30,7 +30,7 @@ return {
             },
             glsl_analyzer = {},
             html = {},
-            lua_ls = {},
+            lua_ls = { settings = { Lua = { hint = { enable = true } } } },
             pyright = {},
             rust_analyzer = {},
             yamlls = {},
