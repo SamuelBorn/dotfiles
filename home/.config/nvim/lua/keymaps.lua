@@ -20,15 +20,15 @@ vim.keymap.set({ "n", "t" }, "<C-Left>", "<cmd>vertical resize -2<cr>")
 vim.keymap.set({ "n", "t" }, "<C-Right>", "<cmd>vertical resize +2<cr>")
 
 -- Go to complete end and beginnng of file
-vim.keymap.set({ "n", "v" }, "gg", "gg0")
-vim.keymap.set({ "n", "v" }, "G", "G$")
+vim.keymap.set({ "n", "x" }, "gg", "gg0")
+vim.keymap.set({ "n", "x" }, "G", "G$")
 
 -- Yank to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 
 -- Delete without overriding nvim clipboard
-vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"_d')
+vim.keymap.set({ "n", "x" }, "<leader>d", '"_d')
 
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
