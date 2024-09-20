@@ -26,6 +26,9 @@ vim.opt.updatetime = 250
 
 vim.opt.spelllang = "en_us,de_de"
 
+-- Remove the tilde at the end of the buffer
+vim.opt.fillchars = {eob = " "}
+
 -- Set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
