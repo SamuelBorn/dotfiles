@@ -24,25 +24,24 @@ sudo dnf install -y \
     fd \
     flameshot \
     g++ \
-    gcc \
     gnome-pomodoro \
     gnome-shell-extension-caffeine \
     gnome-tweaks \
-    htop \
+    btop \
     hunspell-de \
     kitty \
     lazygit \
     mpv \
     neovim \
     nextcloud-client \
-    nodejs \
+    npm \
     prename \
     ripgrep \
     stow \
     tldr \
     trash-cli \
     util-linux \
-    xclip \
+    wl-clipboard \
     zoxide \
     zsh \
     zsh-autosuggestions \

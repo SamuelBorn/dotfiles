@@ -6,7 +6,6 @@ flatpak install flathub -y \
 	org.gtk.Gtk3theme.adw-gtk3-dark \
 	\
 	com.discordapp.Discord \
-	com.github.flxzt.rnote \
 	com.github.jeromerobert.pdfarranger \
 	com.github.johnfactotum.Foliate \
 	com.github.tchx84.Flatseal \
