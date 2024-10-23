@@ -5,3 +5,6 @@ sudo dracut --regenerate-all --force  # sudo update-initramfs -u
 
 # Set boot theme
 sudo plymouth-set-default-theme details -R
+
+# disable acpi wakeup devices so suspend does not wake immediately
+echo '@reboot sudo sh -c "for device in \$(awk \"/\\*enabled/ {print \$1}\" /proc/acpi/wakeup); do echo \$device > /proc/acpi/wakeup; done"' | crontab -
