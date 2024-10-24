@@ -36,6 +36,7 @@ return {
             yamlls = {},
             texlab = {},
             rnix = {},
+            kotlin_language_server = {},
         }
 
         require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
