@@ -14,7 +14,7 @@ return {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("gruvbox")
+            vim.cmd.colorscheme("gruvbox")
         end
     },
     {
@@ -22,7 +22,7 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("tokyonight-night")
+            -- vim.cmd.colorscheme("tokyonight-night")
         end
     },
 }
