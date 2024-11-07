@@ -25,9 +25,7 @@ return {
         end
 
         local servers = {
-            clangd = {
-                cmd = { "clangd", "--offset-encoding=utf-16", "--header-insertion=never" },
-            },
+            clangd = {},
             glsl_analyzer = {},
             html = {},
             lua_ls = { settings = { Lua = { hint = { enable = true } } } },
@@ -35,8 +33,6 @@ return {
             rust_analyzer = {},
             yamlls = {},
             texlab = {},
-            rnix = {},
-            kotlin_language_server = {},
         }
 
         require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
