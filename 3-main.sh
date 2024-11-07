@@ -32,13 +32,13 @@ fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
 
 # Change default shell to zsh
-chsh -s /bin/zsh
+chsh --shell /bin/zsh
 
 # GitHub add ssh key and default sign commits
 ssh-keygen -t ed25519 -C "$email"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
+cat ~/.ssh/id_ed25519.pub
 xdg-open "https://github.com/settings/keys"
 
 # Git setup with signing

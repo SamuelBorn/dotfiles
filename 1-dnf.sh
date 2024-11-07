@@ -18,6 +18,7 @@ sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 # Useful packages
 sudo dnf install -y \
     adw-gtk3-theme \
+    btop \
     cloc \
     cmake \
     fastfetch \
@@ -27,7 +28,6 @@ sudo dnf install -y \
     gnome-pomodoro \
     gnome-shell-extension-caffeine \
     gnome-tweaks \
-    btop \
     hunspell-de \
     kitty \
     lazygit \
