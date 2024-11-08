@@ -1,6 +1,5 @@
 return {
     "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
     config = function()
         require("toggleterm").setup({
             direction = "vertical",
@@ -8,7 +7,6 @@ return {
             persist_size = false,
             persist_mode = false,
             shade_terminals = false,
-            open_mapping = "<C-\\>",
         })
 
         Lazygit = require("toggleterm.terminal").Terminal:new({
@@ -20,7 +18,9 @@ return {
                 vim.keymap.set("t", "<Esc>", "<Esc>", { buffer = term.bufnr })
             end,
         })
-
-        vim.keymap.set({ "n", "t" }, "<C-g>", "<cmd>lua Lazygit:toggle()<CR>")
-    end
+    end,
+    keys = {
+        { "<C-\\>", "<cmd>ToggleTerm<CR>",           mode = { "n", "t" } },
+        { "<C-g>",  "<cmd>lua Lazygit:toggle()<CR>", mode = { "n", "t" } },
+    },
 }
