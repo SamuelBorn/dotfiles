@@ -7,7 +7,7 @@ return {
         { "j-hui/fidget.nvim",                opts = {} },
     },
     config = function()
-        local on_attach = function(client, bufnr)
+        local on_attach = function()
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 
@@ -19,10 +19,11 @@ return {
 
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
-            -- shortcut to enable inlay hints with leader i
-            vim.keymap.set("n", "<leader>i",
-                function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
+            vim.keymap.set("n", "<leader>th", function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            end)
         end
+
 
         local servers = {
             clangd = {},
@@ -40,7 +41,7 @@ return {
             function(server_name)
                 servers[server_name].capabilities = require("cmp_nvim_lsp").default_capabilities()
                 servers[server_name].on_attach = on_attach
-                require("lspconfig")[server_name].setup(servers[server_name])
+                require("lspconfig")[server_name].setup(servers[server_name] or {})
             end,
         })
     end,

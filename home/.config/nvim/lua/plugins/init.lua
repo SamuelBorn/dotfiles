@@ -4,7 +4,7 @@ return {
     {
         "stevearc/oil.nvim",
         opts = {
-            view_options = { show_hidden = true };
+            view_options = { show_hidden = true },
         },
         keys = { { "-", "<cmd>Oil<cr>" } },
     },
