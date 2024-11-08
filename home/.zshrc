@@ -22,7 +22,7 @@ setopt hist_ignore_all_dups
 # Useful Aliases
 alias g="lazygit"
 alias i="sudo dnf install"
-alias u="kitten @ launch flatpak update -y; sudo dnf upgrade"
+alias u="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
 alias cd="z"
 alias fd="fd --hidden"
 alias ls="ls --color=auto -1"
