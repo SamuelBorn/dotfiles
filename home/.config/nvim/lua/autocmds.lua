@@ -1,5 +1,5 @@
 -- check if we need to reload the file when it changed (e.g. after git reset)
-vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "TermLeave" }, {
     callback = function()
         if vim.o.buftype ~= "nofile" then
             vim.cmd("checktime")
