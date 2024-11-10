@@ -1,7 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-        "nvim-lua/plenary.nvim",
+        { "nvim-lua/plenary.nvim" },
         { "danielfalk/smart-open.nvim",               dependencies = "kkharji/sqlite.lua" },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
