@@ -34,6 +34,7 @@ return {
             rust_analyzer = {},
             yamlls = {},
             texlab = {},
+            jdtls = {},
         }
 
         require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
