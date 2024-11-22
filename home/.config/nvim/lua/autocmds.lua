@@ -19,6 +19,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
 -- write changes when opening terminal
 vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter" }, {
     command = "wa",
