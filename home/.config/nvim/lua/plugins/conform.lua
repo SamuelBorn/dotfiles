@@ -15,10 +15,10 @@ return {
                 tex        = { "latexindent" },
             },
         })
-        vim.keymap.set("n", "<leader>l", function()
-            require("conform").format({ lsp_format = "fallback" })
-        end)
-        vim.keymap.set("n", "<leader>L", "mzgg=G`z")
         require("mason-conform").setup()
     end,
+    keys = {
+        { "<leader>l", function() require("conform").format({ lsp_format = "fallback" }) end },
+        { "<leader>L", "mzgg=G`z" },
+    },
 }
