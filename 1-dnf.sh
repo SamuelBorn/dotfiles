@@ -20,6 +20,7 @@ sudo dnf install -y \
     adw-gtk3-theme \
     btop \
     cloc \
+    chromium \
     cmake \
     fastfetch \
     fd \

@@ -12,7 +12,6 @@ flatpak install flathub -y \
     com.github.jeromerobert.pdfarranger \
     com.github.johnfactotum.Foliate \
     com.github.tchx84.Flatseal \
-    com.google.Chrome \
     com.mattjakeman.ExtensionManager \
     com.spotify.Client \
     md.obsidian.Obsidian \
