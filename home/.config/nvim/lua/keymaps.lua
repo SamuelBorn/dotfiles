@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- Save file with sudo permissions
-vim.keymap.set("c", "w!!", "w !sudo tee % > /dev/null")
+vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
