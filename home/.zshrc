@@ -23,6 +23,8 @@ setopt hist_ignore_all_dups
 alias g="lazygit"
 alias i="sudo dnf install"
 alias u="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
+alias n="nvim"
+alias o="xdg-open"
 alias cd="z"
 alias fd="fd --hidden"
 alias ls="ls --color=auto -1"
@@ -34,8 +36,6 @@ alias tree="eza --tree --all --git-ignore --git --level=4"
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
 alias pdflatex="texfot pdflatex"
-function n() { nvim "${1:-"$(fzf)"}" }
-function o() { xdg-open "${1:-"$(fzf)"}" 2> /dev/null}
 function md() { mkdir "$1" && cd "$1" }
 
 # Path
