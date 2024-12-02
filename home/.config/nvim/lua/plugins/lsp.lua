@@ -5,6 +5,14 @@ return {
         { "williamboman/mason-lspconfig.nvim" },
         { "folke/neodev.nvim",                opts = {} },
         { "j-hui/fidget.nvim",                opts = {} },
+        {
+            "rachartier/tiny-inline-diagnostic.nvim",
+            priority = 1000,
+            config = function()
+                vim.diagnostic.config({ virtual_text = false })
+                require("tiny-inline-diagnostic").setup()
+            end,
+        }
     },
     config = function()
         local on_attach = function()
