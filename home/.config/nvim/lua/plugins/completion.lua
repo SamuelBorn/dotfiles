@@ -6,13 +6,24 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
-        "rafamadriz/friendly-snippets",
+        {
+            "rafamadriz/friendly-snippets",
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load()
+            end
+        },
     },
     event = "VeryLazy",
     config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-
+        local ls = require("luasnip")
         require("luasnip").config.setup()
+        ls.add_snippets("cpp", {
+            ls.snippet("cout", {
+                ls.text_node("std::cout << "),
+                ls.insert_node(1),
+                ls.text_node(" << std::endl;"),
+            }),
+        }, { override_priority = 1001 })
 
         local cmp = require("cmp")
         cmp.setup {
