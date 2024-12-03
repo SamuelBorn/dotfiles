@@ -1,6 +1,6 @@
 # Dotfiles and Post-install Scripts for Fedora
 
-The included post-install script streamlines the setup process by installing essential software (notably `nvim` and configuring various options, such as config files, themes, shortcuts, and fonts.
+The included post-install script streamlines the setup process by installing essential software and configuring various options, such as config files (notably `nvim`), themes, shortcuts, and fonts.
 Feel free to customize the script by commenting out sections that are not relevant to your needs.
 
 Just grab the dotfiles you need or run the scripts below to get the whole setup.
