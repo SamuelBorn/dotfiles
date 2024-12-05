@@ -13,6 +13,7 @@ vim.keymap.set({ "n", "x" }, "<C-a>", "<Esc>ggVG")
 -- Yank to system clipboard
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
+vim.keymap.set("n", "<A-y>", 'mzgg"+yG`z')
 
 -- Leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
