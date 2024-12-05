@@ -13,6 +13,7 @@ return {
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
                 tex        = { "latexindent" },
+                cmake      = { "cmake_format" },
             },
         })
         require("mason-conform").setup()
