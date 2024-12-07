@@ -49,7 +49,6 @@ export PATH
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 export LD_LIBRARY_PATH=/usr/local/lib64:/home/born/Nextcloud/ws2425/Master/KaHIP/deploy:$LD_LIBRARY_PATH
-module load mpi/openmpi-x86_64
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
 WORDCHARS={}
