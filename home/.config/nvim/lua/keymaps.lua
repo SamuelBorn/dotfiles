@@ -1,5 +1,5 @@
 -- Save and quit
-vim.keymap.set("n", "<leader>w", vim.cmd.write)
+vim.keymap.set("n", "<leader>w", vim.cmd("wa"))
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
