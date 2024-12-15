@@ -8,6 +8,7 @@ autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 setopt no_case_glob
 
 # Plugins
+eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
