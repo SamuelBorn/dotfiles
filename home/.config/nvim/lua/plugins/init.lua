@@ -1,11 +1,17 @@
 return {
     { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
+    { "echasnovski/mini.ai",       event = "VeryLazy", opts = {} },
     {
-        "github/copilot.vim",
-        event = "VeryLazy",
-        config = function()
-            vim.keymap.set('i', '<C-o>', '<Plug>(copilot-accept-word)')
-        end
+        "zbirenbaum/copilot.lua",
+        event = "InsertEnter",
+        opts = {
+            suggestion = {
+                auto_trigger = true,
+                keymap = {
+                    accept_line = "<A-l>"
+                }
+            },
+        }
     },
     {
         "stevearc/oil.nvim",
