@@ -27,7 +27,13 @@ vim.opt.updatetime = 250
 vim.opt.spelllang = "en_us,de_de"
 
 -- Remove the tilde at the end of the buffer
-vim.opt.fillchars = {eob = " "}
+vim.opt.fillchars = { eob = " " }
+
+-- make higher order function to bind functions with arguments
+Fn = function(f, ...)
+    local args = { ... }
+    return function() f(unpack(args)) end
+end
 
 -- Set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
