@@ -10,6 +10,10 @@ vim.keymap.set({ "n", "x" }, "G", "G$")
 -- Select all
 vim.keymap.set({ "n", "x" }, "<C-a>", "<Esc>ggVG")
 
+-- Execute lua code
+vim.keymap.set("n", "<leader>x", ":.lua<cr>")
+vim.keymap.set("v", "<leader>x", ":lua<cr>")
+
 -- Yank to system clipboard
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
@@ -28,12 +32,16 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "q:", ":q")
 
 -- Move lines up and down
-vim.keymap.set("x", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("x", "K", ":m '<-2<cr>gv=gv")
+vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==")
+vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==")
+vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi")
+vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi")
+vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv")
+vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv")
 
 -- Better j k in wrapped lines (10j still behaves like j)
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Jump centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -44,10 +52,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Window management
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>h", vim.cmd.split)
-vim.keymap.set({ "n", "t" }, "<C-h>", Fn(vim.cmd.wincmd, "h"))
-vim.keymap.set({ "n", "t" }, "<C-j>", Fn(vim.cmd.wincmd, "j"))
-vim.keymap.set({ "n", "t" }, "<C-k>", Fn(vim.cmd.wincmd, "k"))
-vim.keymap.set({ "n", "t" }, "<C-l>", Fn(vim.cmd.wincmd, "l"))
+vim.keymap.set({ "n", "t" }, "<C-h>", "<C-w>h")
+vim.keymap.set({ "n", "t" }, "<C-j>", "<C-w>j")
+vim.keymap.set({ "n", "t" }, "<C-k>", "<C-w>k")
+vim.keymap.set({ "n", "t" }, "<C-l>", "<C-w>l")
 vim.keymap.set({ "n", "t" }, "<C-Up>", Fn(vim.cmd.resize, "+2"))
 vim.keymap.set({ "n", "t" }, "<C-Down>", Fn(vim.cmd.resize, "-2"))
 vim.keymap.set({ "n", "t" }, "<C-Left>", Fn(vim.cmd, "vertical resize -2"))

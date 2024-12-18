@@ -1,18 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "williamboman/mason.nvim",          opts = {} },
-        { "williamboman/mason-lspconfig.nvim" },
-        { "folke/neodev.nvim",                opts = {} },
+        { "folke/lazydev.nvim",               opts = {}, ft = "lua" },
         { "j-hui/fidget.nvim",                opts = {} },
-        {
-            "rachartier/tiny-inline-diagnostic.nvim",
-            priority = 1000,
-            config = function()
-                vim.diagnostic.config({ virtual_text = false })
-                require("tiny-inline-diagnostic").setup()
-            end,
-        }
+        { "williamboman/mason.nvim",          opts = {} },
+        { "williamboman/mason-lspconfig.nvim" }
     },
     config = function()
         local on_attach = function()
@@ -22,7 +14,6 @@ return {
             vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
             vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
             vim.keymap.set("n", "gI", require("telescope.builtin").lsp_implementations)
-            vim.keymap.set("n", "gt", require("telescope.builtin").lsp_type_definitions)
             vim.keymap.set("n", "gh", vim.lsp.buf.declaration)
 
             vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)

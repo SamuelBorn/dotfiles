@@ -8,16 +8,15 @@ return {
             suggestion = {
                 auto_trigger = true,
                 keymap = {
-                    accept_line = "<A-l>"
+                    accept = "<C-Enter>",
+                    accept_word = "<A-Enter>"
                 }
             },
         }
     },
     {
         "stevearc/oil.nvim",
-        opts = {
-            view_options = { show_hidden = true },
-        },
+        opts = { view_options = { show_hidden = true } },
         keys = { { "-", "<cmd>Oil<cr>" } },
     },
 }
