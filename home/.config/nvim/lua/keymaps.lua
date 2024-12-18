@@ -1,5 +1,5 @@
 -- Save and quit
-vim.keymap.set("n", "<leader>w", Fn(vim.cmd, "wa"))
+vim.keymap.set("n", "<leader>w", "<cmd>wa<cr>")
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
@@ -30,12 +30,16 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Remove annoying keymap
 vim.keymap.set("n", "q:", ":q")
+vim.keymap.set("x", "J", "j")
+
+-- Buffer management
+vim.keymap.set("n", "H", "<cmd>bprevious<cr>")
+vim.keymap.set("n", "L", "<cmd>bnext<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
 
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==")
 vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==")
-vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi")
-vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi")
 vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv")
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv")
 
@@ -56,7 +60,7 @@ vim.keymap.set({ "n", "t" }, "<C-h>", "<C-w>h")
 vim.keymap.set({ "n", "t" }, "<C-j>", "<C-w>j")
 vim.keymap.set({ "n", "t" }, "<C-k>", "<C-w>k")
 vim.keymap.set({ "n", "t" }, "<C-l>", "<C-w>l")
-vim.keymap.set({ "n", "t" }, "<C-Up>", Fn(vim.cmd.resize, "+2"))
-vim.keymap.set({ "n", "t" }, "<C-Down>", Fn(vim.cmd.resize, "-2"))
-vim.keymap.set({ "n", "t" }, "<C-Left>", Fn(vim.cmd, "vertical resize -2"))
-vim.keymap.set({ "n", "t" }, "<C-Right>", Fn(vim.cmd, "vertical resize +2"))
+vim.keymap.set({ "n", "t" }, "<C-Up>", "<cmd>resize +2<cr>")
+vim.keymap.set({ "n", "t" }, "<C-Down>", "<cmd>resize -2<cr>")
+vim.keymap.set({ "n", "t" }, "<C-Left>", "<cmd>vertical resize -2<cr>")
+vim.keymap.set({ "n", "t" }, "<C-Right>", "<cmd>vertical resize +2<cr>")
