@@ -28,7 +28,7 @@ vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Remove annoying keymap
+-- Remove annoying keymaps
 vim.keymap.set("n", "q:", ":q")
 vim.keymap.set("x", "J", "j")
 

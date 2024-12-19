@@ -23,7 +23,8 @@ return {
                 jump = function(direction) ls.jump(direction) end,
             },
             sources = {
-                default = { 'luasnip', 'snippets', 'lsp', 'path', 'buffer' },
+                default = { 'luasnip', 'lsp', 'path', 'snippets' },
+                cmd = {}
             },
         })
     end,
