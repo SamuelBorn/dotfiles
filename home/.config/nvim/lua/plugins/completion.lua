@@ -2,12 +2,14 @@
 return {
     'saghen/blink.cmp',
     version = '*',
-    dependencies = { 'L3MON4D3/LuaSnip', version = '*' },
+    dependencies = {
+        { 'rafamadriz/friendly-snippets' },
+        { 'L3MON4D3/LuaSnip',            version = '*' },
+    },
     config = function()
-        local ls = require('luasnip')
+        local ls = require("luasnip")
         ls.config.setup({ enable_autosnippets = true })
-        require("luasnip.loaders.from_lua").lazy_load({ paths = { "./lua/snippets" } })
-        require("luasnip.loaders.from_vscode").lazy_load()
+        require('luasnip.loaders.from_lua').lazy_load({ paths = { "./lua/snippets" } })
 
         require("blink.cmp").setup({
             snippets = {
@@ -21,8 +23,8 @@ return {
                 jump = function(direction) ls.jump(direction) end,
             },
             sources = {
-                default = { 'path', 'luansip', 'lsp', 'buffer' },
+                default = { 'luasnip', 'snippets', 'lsp', 'path', 'buffer' },
             },
         })
-    end
+    end,
 }
