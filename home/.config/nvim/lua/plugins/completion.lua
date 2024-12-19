@@ -23,8 +23,13 @@ return {
                 jump = function(direction) ls.jump(direction) end,
             },
             sources = {
-                default = { 'luasnip', 'snippets', 'lsp', 'path', 'buffer' },
+                default = { 'lazydev', 'luasnip', 'snippets', 'lsp', 'path', 'buffer' },
             },
+            completion = {
+                list = {
+                    selection = 'auto_insert'
+                }
+            }
         })
     end,
 }
