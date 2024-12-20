@@ -25,6 +25,9 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 -- Save file with sudo permissions
 vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 
+-- Replace current selection
+vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
+
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
