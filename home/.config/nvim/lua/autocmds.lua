@@ -36,10 +36,3 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "help", "man" },
     command = "wincmd L",
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "cpp",
-    callback = function()
-        vim.bo.commentstring = "// %s"
-    end,
-})
