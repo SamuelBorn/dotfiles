@@ -1,1 +1,1 @@
-vim.bo.commentstring = "// Commnet: %s"
+vim.bo.commentstring = "// %s"
