@@ -1,12 +1,13 @@
 return {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     opts = {
+        options = { component_separators = "" },
         sections = {
-            lualine_a = { 'mode' },
-            lualine_b = { 'diff' },
-            lualine_c = { { 'filename', path = 3 } },
-            lualine_x = { 'filetype' },
-            lualine_y = {},
+            lualine_a = { "mode" },
+            lualine_b = { { "buffers", symbols = { alternate_file = "" } } },
+            lualine_c = {},
+            lualine_x = { "filetype" },
+            lualine_y = { "diff" },
             lualine_z = { function() return string.format("%d ln", vim.api.nvim_buf_line_count(0)) end },
         },
     },
