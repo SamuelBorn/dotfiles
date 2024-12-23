@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 return {
     "saghen/blink.cmp",
     version = "*",
@@ -8,10 +7,7 @@ return {
     },
     config = function()
         require("luasnip").config.setup({ enable_autosnippets = true })
-        require("luasnip.loaders.from_lua").lazy_load({ paths = { "./lua/snippets" } })
-
-        require("blink.cmp").setup({
-            sources = { default = { "luasnip", "lsp", "path", "snippets", "lazydev" } }
-        })
+        require("luasnip.loaders.from_lua").lazy_load({ paths = { "./snippets" } })
+        require("blink.cmp").setup()
     end,
 }
