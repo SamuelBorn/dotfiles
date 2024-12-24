@@ -8,6 +8,6 @@ return {
     config = function()
         require("luasnip").config.setup({ enable_autosnippets = true })
         require("luasnip.loaders.from_lua").lazy_load({ paths = { "./snippets" } })
-        require("blink.cmp").setup()
+        require("blink.cmp").setup({ sources = { cmdline = {} } })
     end,
 }
