@@ -6,7 +6,6 @@ return {
             size = function() return vim.o.columns * 0.381966 end,
             persist_size = false,
             persist_mode = false,
-            shade_terminals = false,
         })
 
         Lazygit = require("toggleterm.terminal").Terminal:new({
