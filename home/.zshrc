@@ -21,9 +21,14 @@ setopt share_history
 setopt hist_ignore_all_dups
 
 # Useful Aliases
+alias di="sudo dnf install"
+alias dr="sudo dnf remove"
+alias ds="dnf search"
+alias fi="flatpak install"
+alias fr="flatpak remove --delete-data"
+alias up="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
+
 alias g="lazygit"
-alias i="sudo dnf install"
-alias u="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
 alias n="nvim"
 alias o="xdg-open"
 alias cd="z"
