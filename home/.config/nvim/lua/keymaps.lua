@@ -28,6 +28,9 @@ vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 -- Replace current selection
 vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
 
+-- Indent file with =
+vim.keymap.set("n", "<leader>L", "gg=G<C-o>")
+
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 

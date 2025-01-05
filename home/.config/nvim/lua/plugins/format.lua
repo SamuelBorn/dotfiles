@@ -20,6 +20,5 @@ return {
     end,
     keys = {
         { "<leader>l", function() require("conform").format({ lsp_format = "fallback" }) end },
-        { "<leader>L", "mzgg=G`z" },
     },
 }
