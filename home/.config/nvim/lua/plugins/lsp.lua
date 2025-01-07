@@ -1,13 +1,16 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "folke/lazydev.nvim",               opts = {}, ft = "lua" },
-        { "j-hui/fidget.nvim",                opts = {} },
-        { "williamboman/mason.nvim",          opts = {} },
+        { "folke/lazydev.nvim",                     opts = {}, ft = "lua" },
+        { "j-hui/fidget.nvim",                      opts = {} },
+        { "rachartier/tiny-inline-diagnostic.nvim", opts = {} },
+        { "williamboman/mason.nvim",                opts = {} },
         { "williamboman/mason-lspconfig.nvim" },
         { "saghen/blink.cmp" },
     },
     config = function()
+        vim.diagnostic.config({ virtual_text = false })
+
         vim.api.nvim_create_autocmd('LspAttach', {
             callback = function()
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
