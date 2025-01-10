@@ -3,10 +3,6 @@ vim.keymap.set("n", "<leader>w", "<cmd>wa<cr>")
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
--- Go to complete end and beginnng of file
-vim.keymap.set({ "n", "x" }, "gg", "gg0")
-vim.keymap.set({ "n", "x" }, "G", "G$")
-
 -- Select all
 vim.keymap.set({ "n", "x" }, "<C-a>", "<Esc>ggVG")
 
@@ -28,13 +24,13 @@ vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 -- Replace current selection
 vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
 
--- Indent file with =
+-- Indent file with
 vim.keymap.set("n", "<leader>L", "gg=G<C-o>")
 
 -- Unhighlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Remove annoying keymaps
+-- Remove annoying keymap
 vim.keymap.set("x", "J", "j")
 
 -- Buffer management
