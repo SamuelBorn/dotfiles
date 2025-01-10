@@ -35,7 +35,6 @@ vim.keymap.set("n", "<leader>L", "gg=G<C-o>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Remove annoying keymaps
-vim.keymap.set("n", "q:", ":q")
 vim.keymap.set("x", "J", "j")
 
 -- Buffer management
