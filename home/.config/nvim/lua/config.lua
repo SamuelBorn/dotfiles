@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -25,6 +26,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.updatetime = 250
+
+vim.opt.undofile = true
 
 vim.opt.spelllang = "en_us,de_de"
 
