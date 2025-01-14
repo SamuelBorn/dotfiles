@@ -1,6 +1,5 @@
 return {
     { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
-    { "echasnovski/mini.ai",       event = "VeryLazy", opts = {} },
     {
         "zbirenbaum/copilot.lua",
         event = "InsertEnter",

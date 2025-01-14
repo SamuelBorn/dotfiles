@@ -32,6 +32,8 @@ return {
                         ["ii"] = "@conditional.inner",
                         ["al"] = "@loop.outer",
                         ["il"] = "@loop.inner",
+                        ["aa"] = "@parameter.outer",
+                        ["ia"] = "@parameter.inner",
                     },
                 },
             },
