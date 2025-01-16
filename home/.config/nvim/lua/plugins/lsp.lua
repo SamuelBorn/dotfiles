@@ -1,18 +1,15 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "folke/lazydev.nvim",                     opts = {}, ft = "lua" },
-        { "j-hui/fidget.nvim",                      opts = {} },
-        { "rachartier/tiny-inline-diagnostic.nvim", opts = {} },
-        { "williamboman/mason.nvim",                opts = {} },
+        { "folke/lazydev.nvim",                    opts = {}, ft = "lua" },
+        { "j-hui/fidget.nvim",                     opts = {} },
+        { "williamboman/mason.nvim",               opts = {} },
         { "williamboman/mason-lspconfig.nvim" },
         { "saghen/blink.cmp" },
     },
     config = function()
-        vim.diagnostic.config({ virtual_text = false })
-
         vim.api.nvim_create_autocmd('LspAttach', {
-            callback = function()
+            callback = function(args)
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
                 vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions() end)
@@ -23,6 +20,14 @@ return {
                 vim.keymap.set("n", "<leader>i", function()
                     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
                 end)
+
+                vim.diagnostic.config({ virtual_text = false })
+                vim.api.nvim_create_autocmd("CursorHold", {
+                    buffer = args.buf,
+                    callback = function()
+                        vim.diagnostic.open_float(nil, { focusable = false })
+                    end
+                })
             end
         })
 
