@@ -19,7 +19,7 @@ return {
         })
     end,
     keys = {
-        { "<C-\\>", "<cmd>ToggleTerm<CR>",           mode = { "n", "t" } },
-        { "<C-g>",  "<cmd>lua Lazygit:toggle()<CR>", mode = { "n", "t" } },
+        { "<C-\\>", "<cmd>ToggleTerm<CR>",           mode = { "n", "t", "i" } },
+        { "<C-g>",  "<cmd>lua Lazygit:toggle()<CR>", mode = { "n", "t", "i" } },
     },
 }
