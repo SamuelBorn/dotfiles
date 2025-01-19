@@ -44,6 +44,8 @@ alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
 alias pdflatex="texfot pdflatex"
 function md() { mkdir "$1" && cd "$1" }
 
+module load mpi/openmpi-x86_64
+
 # Path
 path+=(/var/lib/flatpak/exports/bin)
 path+=(~/.cargo/bin)
