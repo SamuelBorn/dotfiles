@@ -12,8 +12,8 @@ return {
             callback = function(args)
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-                vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions() end)
-                vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references() end)
+                vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end)
+                vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 
                 vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help)
 
