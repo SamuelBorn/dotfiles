@@ -1,9 +1,9 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "folke/lazydev.nvim",                    opts = {}, ft = "lua" },
-        { "j-hui/fidget.nvim",                     opts = {} },
-        { "williamboman/mason.nvim",               opts = {} },
+        { "folke/lazydev.nvim",               opts = {}, ft = "lua" },
+        { "j-hui/fidget.nvim",                opts = {} },
+        { "williamboman/mason.nvim",          opts = {} },
         { "williamboman/mason-lspconfig.nvim" },
         { "saghen/blink.cmp" },
     },
@@ -35,7 +35,7 @@ return {
             clangd = {},
             glsl_analyzer = {},
             html = {},
-            lua_ls = { settings = { Lua = { hint = { enable = true } } } },
+            lua_ls = {},
             pyright = {},
             rust_analyzer = {},
             texlab = {},
