@@ -4,6 +4,15 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
+            require("catppuccin").setup {
+                color_overrides = {
+                    mocha = {
+                        base = "#15151D",
+                        mantle = "#15151D",
+                        crust = "#15151D",
+                    },
+                }
+            }
             vim.cmd.colorscheme("catppuccin-mocha")
         end
     },
