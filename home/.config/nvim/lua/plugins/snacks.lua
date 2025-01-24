@@ -3,7 +3,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-        picker = { enabled = true }
+        picker = { enabled = true },
     },
     keys = {
         { "<leader><leader>", function() Snacks.picker.pick({ finder = "smart", matcher = { sort_empty = true } }) end },
@@ -12,5 +12,6 @@ return {
         { "<leader>fg",       function() Snacks.picker.grep() end },
         { "<leader>ff",       function() Snacks.picker.files() end },
         { "<leader>cc",       function() Snacks.picker.colorschemes() end },
+        { "<leader>bo",       function() Snacks.bufdelete.other() end },
     },
 }
