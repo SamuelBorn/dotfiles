@@ -42,3 +42,12 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "tex",
     command = "setlocal makeprg=texfot\\ pdflatex\\ %",
 })
+
+-- Show LSP status
+vim.api.nvim_create_autocmd("LspProgress", {
+    callback = function()
+            vim.notify(vim.lsp.status(), vim.log.levels.TRACE, {
+            id = "lsp_progress",
+        })
+    end,
+})

@@ -4,6 +4,7 @@ return {
     lazy = false,
     opts = {
         picker = { enabled = true },
+        notifier = { enabled = true },
     },
     keys = {
         { "<leader><leader>", function() Snacks.picker.smart() end },
