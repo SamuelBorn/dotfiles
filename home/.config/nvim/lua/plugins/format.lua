@@ -9,7 +9,7 @@ return {
                 markdown   = { "prettierd" },
                 html       = { "prettierd" },
                 css        = { "prettierd" },
-                python     = { "isort", "black" },
+                python     = { "ruff" },
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
                 tex        = { "latexindent" },
