@@ -6,7 +6,7 @@ return {
         picker = { enabled = true },
     },
     keys = {
-        { "<leader><leader>", function() Snacks.picker.pick({ finder = "smart", matcher = { sort_empty = true } }) end },
+        { "<leader><leader>", function() Snacks.picker.smart() end },
         { "<leader>fc",       function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end },
         { "<leader>fh",       function() Snacks.picker.help() end },
         { "<leader>fg",       function() Snacks.picker.grep() end },
