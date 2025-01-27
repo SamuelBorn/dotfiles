@@ -12,7 +12,7 @@ return {
         { "<leader>fh",       function() Snacks.picker.help() end },
         { "<leader>fg",       function() Snacks.picker.grep() end },
         { "<leader>ff",       function() Snacks.picker.files() end },
-        { "<leader>cc",       function() Snacks.picker.colorschemes() end },
         { "<leader>bo",       function() Snacks.bufdelete.other() end },
+        { "<leader>bd",       function() Snacks.bufdelete() end },
     },
 }

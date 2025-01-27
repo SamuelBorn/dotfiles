@@ -36,7 +36,6 @@ vim.keymap.set("x", "J", "j")
 -- Buffer management
 vim.keymap.set("n", "H", "<cmd>bprevious<cr>")
 vim.keymap.set("n", "L", "<cmd>bnext<cr>")
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
 
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==")
