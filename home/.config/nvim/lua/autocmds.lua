@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
     callback = function()
             vim.notify(vim.lsp.status(), vim.log.levels.TRACE, {
             id = "lsp_progress",
+            title = "LSP Progress",
         })
     end,
 })

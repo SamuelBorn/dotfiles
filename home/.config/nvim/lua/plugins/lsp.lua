@@ -36,7 +36,7 @@ return {
             glsl_analyzer = {},
             html = {},
             lua_ls = {},
-            basedpyright = {},
+            pyright = {},
             rust_analyzer = {},
             texlab = {},
             jdtls = {},
