@@ -15,9 +15,6 @@ vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("n", "<A-y>", '<cmd>%y+<cr>')
 
--- Leave terminal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-
 -- Save file with sudo permissions
 vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 
@@ -34,8 +31,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("x", "J", "j")
 
 -- Buffer management
-vim.keymap.set("n", "H", "<cmd>bprevious<cr>")
-vim.keymap.set("n", "L", "<cmd>bnext<cr>")
+vim.keymap.set({ "n", "t", "x" }, "H", "<cmd>bprevious<cr>")
+vim.keymap.set({ "n", "t", "x" }, "L", "<cmd>bnext<cr>")
 
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==")
