@@ -5,6 +5,12 @@ return {
     opts = {
         picker = { enabled = true },
         notifier = { enabled = true },
+        terminal = {
+            win = {
+                wo = { winbar = '' },
+                keys = { term_normal = {} },
+            },
+        },
     },
     keys = {
         { "<leader><leader>", function() Snacks.picker.smart() end },
@@ -14,5 +20,7 @@ return {
         { "<leader>ff",       function() Snacks.picker.files() end },
         { "<leader>bo",       function() Snacks.bufdelete.other() end },
         { "<leader>bd",       function() Snacks.bufdelete() end },
+        { "<C-\\>",           function() Snacks.terminal() end,                                      mode = { "n", "t", "i" } },
+        { "<C-g>",            function() Snacks.lazygit() end,                                       mode = { "n", "t", "i" } },
     },
 }
