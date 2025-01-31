@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("n", "<leader>o", vim.cmd.only)
 
 -- Select all
-vim.keymap.set({ "n", "x" }, "<C-a>", "<Esc>ggVG")
+vim.keymap.set("n", "<C-a>", "ggVG")
 
 -- Execute lua code
 vim.keymap.set("n", "<leader>x", ":.lua<cr>")
@@ -21,11 +21,11 @@ vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 -- Replace current selection
 vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
 
--- Indent file with
+-- Indent file
 vim.keymap.set("n", "<leader>L", "gg=G<C-o>")
 
 -- Unhighlight search
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
 -- Remove annoying keymap
 vim.keymap.set("x", "J", "j")
@@ -40,7 +40,7 @@ vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==")
 vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv")
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv")
 
--- Better j k in wrapped lines (10j still behaves like j)
+-- Better j k in wrapped lines (10j still behaves like normal j)
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
