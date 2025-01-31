@@ -32,8 +32,4 @@ return {
     --         vim.g.gruvbox_material_palette = "mix"
     --     end
     -- },
-    -- {
-    --     "rebelot/kanagawa.nvim",
-    --     priority = 1000,
-    -- },
 }
