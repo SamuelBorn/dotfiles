@@ -31,8 +31,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 vim.keymap.set("x", "J", "j")
 
 -- Buffer management
-vim.keymap.set({ "n", "t", "x" }, "H", "<cmd>bprevious<cr>")
-vim.keymap.set({ "n", "t", "x" }, "L", "<cmd>bnext<cr>")
+vim.keymap.set({ "n", "x" }, "H", "<cmd>bprevious<cr>")
+vim.keymap.set({ "n", "x" }, "L", "<cmd>bnext<cr>")
 
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==")
