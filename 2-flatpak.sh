@@ -10,7 +10,7 @@ flatpak install flathub -y \
     \
     com.discordapp.Discord \
     com.github.jeromerobert.pdfarranger \
-    com.github.johnfactotum.Foliate \
+    com.calibre_ebook.calibre \
     com.github.tchx84.Flatseal \
     com.mattjakeman.ExtensionManager \
     com.spotify.Client \
