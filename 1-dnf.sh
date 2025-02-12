@@ -13,6 +13,7 @@ sudo dnf upgrade -y
 
 # Nvidia and Multimedia Configuration
 sudo dnf install -y akmod-nvidia nvidia-vaapi-driver libva-utils vdpauinfo libva-nvidia-driver
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
 
 # remove unwanted software
