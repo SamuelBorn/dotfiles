@@ -45,9 +45,16 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Show LSP status
 vim.api.nvim_create_autocmd("LspProgress", {
     callback = function()
-            vim.notify(vim.lsp.status(), vim.log.levels.TRACE, {
+        vim.notify(vim.lsp.status(), vim.log.levels.TRACE, {
             id = "lsp_progress",
             title = "LSP Progress",
         })
     end,
+})
+
+-- Remove auto comment insertion
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+        vim.opt.formatoptions:remove({ "o", "r" })
+    end
 })
