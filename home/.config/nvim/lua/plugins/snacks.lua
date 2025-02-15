@@ -13,6 +13,7 @@ return {
         { "<leader>fh",       function() Snacks.picker.help() end },
         { "<leader>fg",       function() Snacks.picker.grep() end },
         { "<leader>ff",       function() Snacks.picker.files() end },
+        { "<leader>fr",       function() Snacks.picker.resume() end },
         { "<leader>bo",       function() Snacks.bufdelete.other() end },
         { "<leader>bd",       function() Snacks.bufdelete() end },
         { "<C-\\>",           function() Snacks.terminal() end, mode = { "n", "t" } },
