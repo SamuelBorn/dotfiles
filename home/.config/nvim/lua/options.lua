@@ -29,7 +29,4 @@ vim.opt.updatetime = 250
 
 vim.opt.undofile = true
 
-vim.opt.spelllang = "en_us,de_de"
-
--- Remove the tilde at the end of the buffer
-vim.opt.fillchars = { eob = " " }
+vim.opt.spelllang = "en,de"
