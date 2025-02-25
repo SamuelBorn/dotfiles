@@ -30,3 +30,5 @@ vim.opt.updatetime = 250
 vim.opt.undofile = true
 
 vim.opt.spelllang = "en,de"
+
+vim.opt.showmode = false
