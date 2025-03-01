@@ -18,6 +18,9 @@ vim.keymap.set("n", "<A-y>", '<cmd>%y+<cr>')
 -- Save file with sudo permissions
 vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 
+-- Make
+vim.keymap.set("n", "<leader>m", "<cmd>wa | make<cr>")
+
 -- Replace current selection
 vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
 
