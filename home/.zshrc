@@ -24,8 +24,8 @@ setopt hist_ignore_all_dups
 alias di="sudo dnf install"
 alias dr="sudo dnf remove"
 alias ds="dnf search"
-alias fi="flatpak install"
-alias fr="flatpak remove --delete-data"
+alias fli="flatpak install"
+alias flr="flatpak remove --delete-data"
 alias up="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
 
 alias g="lazygit"
