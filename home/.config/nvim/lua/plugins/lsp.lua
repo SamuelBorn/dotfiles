@@ -7,6 +7,15 @@ return {
         { "saghen/blink.cmp" },
     },
     config = function()
+        vim.api.nvim_create_autocmd("LspProgress", {
+            callback = function()
+                vim.notify(vim.lsp.status(), vim.log.levels.TRACE, {
+                    id = "lsp_progress",
+                    title = "LSP Progress",
+                })
+            end,
+        })
+
         vim.api.nvim_create_autocmd('LspAttach', {
             callback = function(args)
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
