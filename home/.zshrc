@@ -46,6 +46,12 @@ function md() { mkdir "$1" && cd "$1" }
 
 module load mpi/openmpi-x86_64
 
+function zoxide_fzf() {
+    LBUFFER+=$(zoxide query --list | fzf)
+}
+zle -N zoxide_fzf
+bindkey '^o' zoxide_fzf
+
 # Path
 path+=(/var/lib/flatpak/exports/bin)
 path+=(~/.cargo/bin)
