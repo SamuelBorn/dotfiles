@@ -7,16 +7,24 @@ source ~/.config/p10k/.p10k.zsh
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
 setopt no_case_glob
 
+# Stuff that should not be in git
+source ~/.config/zsh_private
+
 # Plugins
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# fzf + zoxide integration
+function fzf_zoxide() { LBUFFER+=$(zoxide query --list | fzf) }
+zle -N fzf_zoxide
+bindkey '^o' fzf_zoxide
+
 # History options
 HISTFILE=~/.config/zsh_histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt share_history
 setopt hist_ignore_all_dups
 
@@ -24,8 +32,11 @@ setopt hist_ignore_all_dups
 alias di="sudo dnf install"
 alias dr="sudo dnf remove"
 alias ds="dnf search"
-alias fli="flatpak install"
-alias flr="flatpak remove --delete-data"
+alias dp="dnf provides"
+alias fpi="flatpak install"
+alias fpr="flatpak remove --delete-data"
+alias fps="flatpak search"
+alias fpl="flatpak list"
 alias up="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
 
 alias g="lazygit"
@@ -38,33 +49,24 @@ alias ll="ls -Ahl"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias tree="eza --tree --all --git-ignore --git --level=4"
+alias tree="tree -C -L 4"
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
 alias pdflatex="texfot pdflatex"
 function md() { mkdir "$1" && cd "$1" }
 
-module load mpi/openmpi-x86_64
-
-function zoxide_fzf() {
-    LBUFFER+=$(zoxide query --list | fzf)
-}
-zle -N zoxide_fzf
-bindkey '^o' zoxide_fzf
-
 # Path
-path+=(/var/lib/flatpak/exports/bin)
 path+=(~/.cargo/bin)
 path+=(~/.local/bin)
-path+=(/usr/lib64/openmpi/bin/mpicc)
+path+=(/usr/lib64/openmpi/bin)
 export PATH
 
 # Environment variables
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
-export LD_LIBRARY_PATH=/usr/local/lib64:/home/born/Nextcloud/ws2425/Master/KaHIP/deploy:$LD_LIBRARY_PATH
-export NVD_BACKEND=direct
-export MOZ_DISABLE_RDD_SANDBOX=1
+export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/born/Nextcloud/ws2425/Master/Code/dependencies/KaHIP:$LD_LIBRARY_PATH
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
 WORDCHARS={}
