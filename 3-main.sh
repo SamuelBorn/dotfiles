@@ -29,7 +29,7 @@ stow --target=$HOME .
 
 # Nerd Font
 mkdir -p ~/.local/share/fonts/JetBrainsMono
-curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz | tar -xJ -C ~/.local/share/fonts/JetBrainsMono
+curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz | tar --extract --xz --directory ~/.local/share/fonts/JetBrainsMono
 fc-cache -f
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 11'
 
