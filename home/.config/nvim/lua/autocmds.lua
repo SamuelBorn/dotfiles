@@ -27,12 +27,6 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "wincmd L",
 })
 
--- Set makeprg for latex
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "tex",
-    command = "setlocal makeprg=texfot\\ pdflatex\\ %",
-})
-
 -- Remove auto comment insertion
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
