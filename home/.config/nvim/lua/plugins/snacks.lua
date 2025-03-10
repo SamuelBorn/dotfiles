@@ -5,7 +5,6 @@ return {
     opts = {
         picker = { enabled = true },
         notifier = { enabled = true },
-        image = { enabled = true },
         terminal = { win = { wo = { winbar = '' } } },
     },
     keys = {
