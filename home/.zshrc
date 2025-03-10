@@ -29,10 +29,10 @@ setopt share_history
 setopt hist_ignore_all_dups
 
 # Useful Aliases
-alias di="sudo dnf install"
-alias dr="sudo dnf remove"
-alias ds="dnf search"
-alias dp="dnf provides"
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
+alias dnfs="dnf search"
+alias dnfp="dnf provides"
 alias fpi="flatpak install"
 alias fpr="flatpak remove --delete-data"
 alias fps="flatpak search"
