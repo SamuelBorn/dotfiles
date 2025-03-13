@@ -42,14 +42,12 @@ return {
 
         local servers = {
             clangd = {},
-            glsl_analyzer = {},
-            html = {},
             lua_ls = {},
             pyright = {},
             rust_analyzer = {},
             texlab = {},
             jdtls = {},
-            cmake = {},
+            harper_ls = {},
         }
 
         require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
