@@ -16,7 +16,7 @@ return {
         { "<leader>rr",       function() Snacks.picker.resume() end },
         { "<leader>bo",       function() Snacks.bufdelete.other() end },
         { "<leader>bd",       function() Snacks.bufdelete() end },
-        { "<C-\\>",           function() Snacks.terminal() end, mode = { "n", "t" } },
-        { "<C-g>",            function() Snacks.lazygit() end, mode = { "n", "t" } },
+        { "<C-\\>",           function() Snacks.terminal() end, mode = { "n", "t", "i" } },
+        { "<C-g>",            function() Snacks.lazygit() end, mode = { "n", "t", "i" } },
     },
 }
