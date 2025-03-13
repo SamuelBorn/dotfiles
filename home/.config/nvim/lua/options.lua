@@ -32,3 +32,6 @@ vim.opt.undofile = true
 vim.opt.spelllang = "en,de"
 
 vim.opt.showmode = false
+
+-- increase oldfiles count
+vim.opt.shada = "!,'2000,<50,s10,h"
