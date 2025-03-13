@@ -34,3 +34,11 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt.formatoptions:remove({ "o", "r" })
     end
 })
+
+-- Enable spelling for some filetypes
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "text", "latex" },
+    callback = function()
+        vim.opt_local.spell = true
+    end,
+})
