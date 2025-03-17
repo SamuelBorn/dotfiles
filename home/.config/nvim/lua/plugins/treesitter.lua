@@ -1,7 +1,7 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-        'nvim-treesitter/nvim-treesitter-textobjects',
+        "nvim-treesitter/nvim-treesitter-textobjects",
     },
     event = "VeryLazy",
     build = ":TSUpdate",
@@ -10,7 +10,7 @@ return {
         require("nvim-treesitter.configs").setup {
             highlight = { enable = true },
             indent = { enable = true },
-            ensure_installed = { 'bash', 'c', 'cpp', 'rust', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'yaml', 'latex' },
+            ensure_installed = { "bash", "c", "cpp", "rust", "html", "lua", "markdown", "vim", "vimdoc", "yaml", "latex", "regex" },
             auto_install = true,
             incremental_selection = {
                 enable = true,
