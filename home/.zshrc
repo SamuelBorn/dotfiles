@@ -1,7 +1,9 @@
-# Powerlevel10k prompt
-source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-source ~/.config/p10k/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.config/p10k/.p10k.zsh
+# Powerlevel10k configuration
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Case Insensitive Autocompletion
 autoload -Uz compinit && compinit -d ~/.config/.zcompdump
