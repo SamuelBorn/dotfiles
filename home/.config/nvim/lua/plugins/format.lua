@@ -9,7 +9,6 @@ return {
                 markdown   = { "prettierd" },
                 html       = { "prettierd" },
                 css        = { "prettierd" },
-                python     = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
                 sh         = { "shfmt" },
                 zsh        = { "beautysh" },
                 tex        = { "latexindent" },

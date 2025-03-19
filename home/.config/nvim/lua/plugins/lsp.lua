@@ -43,6 +43,7 @@ return {
         local servers = {
             clangd = {},
             lua_ls = {},
+            ruff = {},
             pyright = {},
             rust_analyzer = {},
             texlab = {},
