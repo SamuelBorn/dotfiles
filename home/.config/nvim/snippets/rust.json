@@ -1,5 +1,5 @@
 {
-  "printd": {
+  "prd": {
     "prefix": "printd",
     "body": ["println!(\"{:?}\", ${1:x});"]
   }
