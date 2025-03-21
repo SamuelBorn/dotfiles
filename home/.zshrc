@@ -1,6 +1,6 @@
 # Powerlevel10k configuration
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -69,6 +69,21 @@ export MANPAGER='nvim +Man!'
 export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/born/Nextcloud/ws2425/Master/Code/dependencies/KaHIP:$LD_LIBRARY_PATH
+export FZF_DEFAULT_OPTS="
+--color=bg+:#363847
+--color=spinner:#f5e0dc
+--color=hl:#f38ba8
+--color=fg:#cdd6f4
+--color=header:#f38ba8
+--color=info:#cba6f7
+--color=pointer:#f5e0dc
+--color=marker:#b4befe
+--color=fg+:#cdd6f4
+--color=prompt:#cba6f7
+--color=hl+:#f38ba8
+--color=selected-bg:#45475a
+--color=border:#313244
+--color=label:#cdd6f4"
 
 # Fix zsh movement in terminal in Terminal - see key codes with "cat"
 WORDCHARS={}
