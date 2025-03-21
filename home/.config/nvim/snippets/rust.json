@@ -1,6 +1,6 @@
 {
   "prd": {
-    "prefix": "printd",
+    "prefix": "prd",
     "body": ["println!(\"{:?}\", ${1:x});"]
   }
 }
