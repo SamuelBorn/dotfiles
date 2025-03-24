@@ -16,7 +16,7 @@ vim.opt.cursorline = true
 vim.opt.signcolumn = 'no'
 
 vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+vim.opt.sidescrolloff = 4
 
 vim.opt.wrap = false
 vim.opt.linebreak = true
