@@ -12,6 +12,7 @@ return {
         { "<leader>fc",       function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end },
         { "<leader>fh",       function() Snacks.picker.help() end },
         { "<leader>fg",       function() Snacks.picker.grep() end },
+        { "<leader>fr",       function() Snacks.picker.recent() end },
         { "<leader>ff",       function() Snacks.picker.files() end },
         { "<leader>rr",       function() Snacks.picker.resume() end },
         { "<leader>bo",       function() Snacks.bufdelete.other() end },
