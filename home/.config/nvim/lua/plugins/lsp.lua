@@ -43,8 +43,17 @@ return {
         local servers = {
             clangd = {},
             lua_ls = {},
-            ruff = {},
-            pyright = {},
+            -- ruff = {},
+            basedpyright = {
+                settings = {
+                    basedpyright = {
+                        analysis = {
+                            typeCheckingMode = "standard",
+                        }
+                    }
+                }
+            },
+            -- pyright = {},
             rust_analyzer = {},
             texlab = {},
             jdtls = {},
