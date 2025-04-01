@@ -35,3 +35,6 @@ vim.opt.showmode = false
 
 -- increase oldfiles count
 vim.opt.shada = "!,'2000,<50,s10,h"
+
+-- unnamedplus
+vim.opt.clipboard = "unnamedplus"
