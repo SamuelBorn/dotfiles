@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Enable spelling for some filetypes
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "text", "latex" },
+    pattern = { "markdown", "text", "latex", "plaintex" },
     callback = function()
         vim.opt_local.spell = true
     end,
