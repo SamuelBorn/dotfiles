@@ -43,7 +43,6 @@ return {
         local servers = {
             clangd = {},
             lua_ls = {},
-            -- ruff = {},
             basedpyright = {
                 settings = {
                     basedpyright = {
@@ -53,7 +52,6 @@ return {
                     }
                 }
             },
-            -- pyright = {},
             rust_analyzer = {},
             texlab = {},
             jdtls = {},
