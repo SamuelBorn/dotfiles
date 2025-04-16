@@ -15,6 +15,8 @@ vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+y$')
 vim.keymap.set("n", "<A-y>", '<cmd>%y+<cr>')
 
+vim.keymap.set("n", "yc", "yygccp", { remap = true })
+
 -- Save file with sudo permissions
 vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 
