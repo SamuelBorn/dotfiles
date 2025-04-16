@@ -52,6 +52,7 @@ return {
                     }
                 }
             },
+            ruff = {},
             rust_analyzer = {},
             texlab = {},
             jdtls = {},
