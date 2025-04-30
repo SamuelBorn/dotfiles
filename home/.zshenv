@@ -13,7 +13,7 @@ export SAVEHIST=100000
 export LD_LIBRARY_PATH="\
 /usr/lib64/openmpi/lib:\
 /usr/local/lib64:\
-/home/born/Nextcloud/ws2425/Master/Code/dependencies/KaHIP:\
+$HOME/Nextcloud/ws2425/Master/Code/dependencies/KaHIP:\
 $LD_LIBRARY_PATH"
 
 export FZF_DEFAULT_OPTS="\
