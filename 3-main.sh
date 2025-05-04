@@ -1,6 +1,3 @@
-# Read in user data
-read -p "Please enter your email address: " email
-
 # No password sudo
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 
@@ -44,7 +41,18 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Ner
 # Change default shell to zsh
 chsh --shell /bin/zsh
 
+# Disable alert bell
+gsettings set org.gnome.desktop.wm.preferences audible-bell false
+
+# Disable logout prompt
+gsettings set org.gnome.SessionManager logout-prompt false
+
+# Theme GTK 3 apps
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 # GitHub add ssh key and default sign commits
+read -p "Please enter your GitHub email address: " email
 ssh-keygen -t ed25519 -C "$email"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
@@ -60,17 +68,3 @@ git config --global user.signingkey ~/.ssh/id_ed25519.pub
 git config --global commit.gpgsign true
 git config --global pull.rebase true
 git config --global rebase.autoStash true
-
-# Disable alert bell
-gsettings set org.gnome.desktop.wm.preferences audible-bell false
-
-# Disable logout prompt
-gsettings set org.gnome.SessionManager logout-prompt false
-
-# Theme GTK 3 apps
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
-# Input remapping: used for esc-caps and mouse buttons
-sudo dnf install -y input-remapper
-sudo systemctl enable --now input-remapper

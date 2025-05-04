@@ -1,3 +1,7 @@
+# Input remapping: used for esc-caps and mouse buttons
+sudo dnf install -y input-remapper
+sudo systemctl enable --now input-remapper
+
 # Keyboard uses FN keys by default, not the multimedia keys
 echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
 echo "options hid_apple fnmode=2" | sudo tee -a /etc/modprobe.d/hid_apple.conf
