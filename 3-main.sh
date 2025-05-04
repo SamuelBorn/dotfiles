@@ -4,6 +4,14 @@ read -p "Please enter your email address: " email
 # No password sudo
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 
+# Screenshot script to fix launch flameshot
+screenshot_script="$HOME/.local/bin/flameshot.sh"
+cat <<EOF >$screenshot_script
+#!/bin/sh
+flameshot gui
+EOF
+chmod +x $screenshot_script
+
 # Custom Shortcuts
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>c']"
@@ -19,7 +27,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/power-off/ command 'shutdown now'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/power-off/ binding '<Super>Delete'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/ name 'Take Screenshot'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/ command 'script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/ command "$screenshot_script"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot/ binding 'Print'
 gsettings set org.gnome.shell.keybindings show-screenshot-ui '[]'
 
