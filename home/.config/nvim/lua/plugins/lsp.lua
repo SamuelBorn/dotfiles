@@ -2,8 +2,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         { "folke/lazydev.nvim",               opts = {}, ft = "lua" },
-        { "williamboman/mason.nvim",          opts = {} },
-        { "williamboman/mason-lspconfig.nvim" },
+        { "mason-org/mason.nvim",          opts = {} },
+        { "mason-org/mason-lspconfig.nvim" },
     },
     config = function()
         vim.api.nvim_create_autocmd("CursorHold", {
