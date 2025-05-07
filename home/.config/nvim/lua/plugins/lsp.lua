@@ -39,7 +39,7 @@ return {
             "lua_ls",
             "pyright",
             "ruff",
-            "rust_analyzer",
+            -- "rust_analyzer",
             "texlab",
             "jdtls",
         }

@@ -18,4 +18,11 @@ return {
         opts = { view_options = { show_hidden = true } },
         keys = { { "-", "<cmd>Oil<cr>" } },
     },
+    {
+        'mrcjkb/rustaceanvim',
+        lazy = false,
+        keys = {
+            { "<leader>rt", function() vim.cmd.RustLsp('testables') end }
+        },
+    }
 }
