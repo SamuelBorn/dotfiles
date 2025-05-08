@@ -22,7 +22,7 @@ return {
         'mrcjkb/rustaceanvim',
         lazy = false,
         keys = {
-            { "<leader>rt", function() vim.cmd.RustLsp('testables') end }
+            { "<leader>tt", function() vim.cmd.RustLsp("run") end }
         },
     }
 }
