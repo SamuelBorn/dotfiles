@@ -36,6 +36,14 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 -- Remove annoying keymap
 vim.keymap.set("x", "J", "j")
 
+-- Toggle inlay hints
+vim.keymap.set("n", "<leader>i", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
+
+-- Show diagnostics
+vim.keymap.set("n", "<leader>e", function()
+    vim.diagnostic.open_float(nil, { border = "rounded", focusable = false, source = "if_many" })
+end)
+
 -- Buffer management
 vim.keymap.set({ "n", "x" }, "H", "<cmd>bprevious<cr>")
 vim.keymap.set({ "n", "x" }, "L", "<cmd>bnext<cr>")
