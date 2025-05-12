@@ -68,3 +68,5 @@ git config --global user.signingkey ~/.ssh/id_ed25519.pub
 git config --global commit.gpgsign true
 git config --global pull.rebase true
 git config --global rebase.autoStash true
+git config --global submodule.rebase true
+git config --global push.recurseSubmodules on-demand
