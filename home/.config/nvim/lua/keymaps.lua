@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-a>", "ggVG")
 
 -- Execute lua code
 vim.keymap.set("n", "<leader>x", ":.lua<cr>")
-vim.keymap.set("v", "<leader>x", ":lua<cr>")
+vim.keymap.set("x", "<leader>x", ":lua<cr>")
 
 -- Yank to system clipboard
 vim.keymap.set({ "n", "x" }, "<leader>y", '"+y')
@@ -38,11 +38,6 @@ vim.keymap.set("x", "J", "j")
 
 -- Toggle inlay hints
 vim.keymap.set("n", "<leader>i", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end)
-
--- Show diagnostics
-vim.keymap.set("n", "<leader>e", function()
-    vim.diagnostic.open_float(nil, { border = "rounded", focusable = false, source = "if_many" })
-end)
 
 -- Buffer management
 vim.keymap.set({ "n", "x" }, "H", "<cmd>bprevious<cr>")
