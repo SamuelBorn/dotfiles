@@ -24,8 +24,9 @@ vim.keymap.set("ca", "w!!", "w !sudo tee % > /dev/null")
 -- Make
 vim.keymap.set("n", "<leader>m", "<cmd>wa | make<cr>")
 
--- Replace current selection
-vim.keymap.set("x", "<leader>r", '"zy:%s/<C-r>z//g<left><left>')
+-- Replace text
+vim.keymap.set("x", "<leader>rp", '"zy:%s/<C-r>z//g<left><left>')
+vim.keymap.set("n", "<leader>rp", ':%s/<C-r><C-w>//g<left><left>')
 
 -- Indent file
 vim.keymap.set("n", "<leader>L", "gg=G<C-o>")
