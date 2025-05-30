@@ -9,8 +9,9 @@ export WORDCHAR={}
 export HISTFILE=~/.config/zsh_histfile
 export HISTSIZE=100000
 export SAVEHIST=100000
-export NVD_BACKEND=direct
 export MOZ_DISABLE_RDD_SANDBOX=1
+export LIBVA_DRIVER_NAME=nvidia
+export NVD_BACKEND=direct
 
 export LD_LIBRARY_PATH="\
 /usr/lib64/openmpi/lib:\
