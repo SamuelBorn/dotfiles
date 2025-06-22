@@ -12,6 +12,7 @@ return {
             zsh        = { "beautysh" },
             tex        = { "latexindent" },
             cmake      = { "cmake_format" },
+            yaml       = { "prettierd" },
         },
     },
     keys = { { "<leader>l", function() require("conform").format({ lsp_format = "fallback" }) end } },
