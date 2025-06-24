@@ -12,12 +12,9 @@ sudo dnf copr enable atim/lazygit -y
 sudo dnf upgrade -y
 
 # Nvidia and Multimedia Configuration
-sudo dnf install -y akmod-nvidia nvidia-vaapi-driver libva-utils vdpauinfo libva-nvidia-driver
+sudo dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs nvidia-vaapi-driver libva-utils vdpauinfo libva-nvidia-driver
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf swap -y ffmpeg-free ffmpeg --allowerasing
-
-# remove unwanted software
-sudo dnf remove -y geary
 
 # Useful packages
 sudo dnf install -y \

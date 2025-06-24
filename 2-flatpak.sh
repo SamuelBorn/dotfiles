@@ -14,7 +14,6 @@ flatpak install flathub -y \
     com.github.tchx84.Flatseal \
     com.mattjakeman.ExtensionManager \
     com.spotify.Client \
-    md.obsidian.Obsidian \
     net.ankiweb.Anki \
     org.gimp.GIMP \
     org.signal.Signal \
