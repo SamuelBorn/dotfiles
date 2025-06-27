@@ -3,16 +3,16 @@ path+=(~/.local/bin)
 path+=(/usr/lib64/openmpi/bin)
 export PATH
 
-export EDITOR="nvim"
+export EDITOR=nvim
 export MANPAGER="nvim +Man!"
-export HISTFILE="~/.config/zsh_histfile"
+export WORDCHAR={}
+export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh_histfile"
 export HISTSIZE=100000
 export SAVEHIST=100000
-export WORDCHAR={}
 
-export NVD_BACKEND="direct"
+export NVD_BACKEND=direct
 export MOZ_DISABLE_RDD_SANDBOX=1
-export LIBVA_DRIVER_NAME="nvidia"
+export LIBVA_DRIVER_NAME=nvidia
 
 export LD_LIBRARY_PATH="\
 /usr/lib64/openmpi/lib:\
