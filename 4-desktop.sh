@@ -12,3 +12,6 @@ sudo plymouth-set-default-theme details -R
 
 # disable acpi wakeup devices so suspend does not wake immediately
 echo '@reboot sudo sh -c "for device in \$(awk \"/\\*enabled/ {print \$1}\" /proc/acpi/wakeup); do echo \$device > /proc/acpi/wakeup; done"' | crontab -
+
+# Create and apply a udev rule to ensure the keyboard is recognized on boot.
+echo 'ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="3a3c", ATTRS{idProduct}=="0002", TEST=="power/control", ATTR{power/control}="on"' | sudo tee /etc/udev/rules.d/90-qmk-keyboard.rules
