@@ -35,10 +35,11 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
--- Enable spelling for some filetypes
+-- Enable spelling + wrap for text files
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "text", "latex", "plaintex" },
+    pattern = { "markdown", "text", "latex", "tex", "plaintex" },
     callback = function()
         vim.opt_local.spell = true
+        vim.opt_local.wrap = true
     end,
 })
