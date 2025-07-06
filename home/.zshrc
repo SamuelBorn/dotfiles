@@ -63,3 +63,11 @@ alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/a
 alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
 alias pdflatex="texfot pdflatex"
 function md() { mkdir "$1" && cd "$1" }
+
+# Bind arrow keys to search history based on the typed command prefix.
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
