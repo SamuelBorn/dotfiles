@@ -51,6 +51,10 @@ gsettings set org.gnome.SessionManager logout-prompt false
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+# Automatically delete trash and temporary files
+gsettings set org.gnome.desktop.privacy remove-old-trash-files true
+gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+
 # GitHub add ssh key and default sign commits
 read -p "Please enter your GitHub email address: " email
 ssh-keygen -t ed25519 -C "$email"
