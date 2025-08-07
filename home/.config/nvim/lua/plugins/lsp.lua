@@ -14,6 +14,7 @@ return {
             "ruff",
             "texlab",
             "jdtls",
+            "tinymist",
         },
     },
 }
