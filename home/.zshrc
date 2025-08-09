@@ -64,6 +64,21 @@ alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
 alias pdflatex="texfot pdflatex"
 function md() { mkdir "$1" && cd "$1" }
 
+# git aliases
+alias gs="git status --short"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit --message"
+alias gca="git commit --all --message"
+alias gsw="git switch"
+alias gcb="git switch --create"
+alias gd="git diff"
+alias gl="git log --graph --decorate --oneline"
+alias gp="git pull"
+alias gP="git push"
+alias gfP="git push --force-with-lease"
+alias gre="git reset --hard HEAD"
+
 # Bind arrow keys to search history based on the typed command prefix.
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
