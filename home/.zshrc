@@ -37,20 +37,11 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 
 # Useful Aliases
-alias g="lazygit"
 alias n="nvim"
+alias g="lazygit"
 alias o="xdg-open"
-alias rm="rm -I"
 alias cd="z"
-alias up="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
-alias dnfi="sudo dnf install"
-alias dnfr="sudo dnf remove"
-alias dnfs="dnf search"
-alias dnfp="dnf provides"
-alias fpi="flatpak install"
-alias fpr="flatpak remove --delete-data"
-alias fps="flatpak search"
-alias fpl="flatpak list"
+alias rm="rm -I"
 alias fd="fd --hidden --no-ignore"
 alias ls="ls --color=auto -1"
 alias ll="ls -Ahl"
@@ -61,8 +52,18 @@ alias .....="cd ../../../.."
 alias tree="tree -C -L 4"
 alias venv="source venv/bin/activate || python -m venv venv && source venv/bin/activate"
 alias restow="(cd ~/Repos/dotfiles && stow -vt ~ home)"
-alias pdflatex="texfot pdflatex"
 function md() { mkdir "$1" && cd "$1" }
+
+# Package Management Aliases
+alias up="kitten @ launch flatpak update -y; sudo dnf upgrade -y"
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
+alias dnfs="dnf search"
+alias dnfp="dnf provides"
+alias fpi="flatpak install"
+alias fpr="flatpak remove --delete-data"
+alias fps="flatpak search"
+alias fpl="flatpak list"
 
 # git aliases
 alias gs="git status --short"
