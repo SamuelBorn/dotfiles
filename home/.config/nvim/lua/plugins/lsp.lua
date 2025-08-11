@@ -15,6 +15,7 @@ return {
             "texlab",
             "jdtls",
             "tinymist",
+            "rust_analyzer",
         },
     },
 }

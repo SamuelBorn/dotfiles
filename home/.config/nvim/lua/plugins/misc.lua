@@ -19,11 +19,4 @@ return {
         opts = { view_options = { show_hidden = true } },
         keys = { { "-", "<cmd>Oil<cr>" } },
     },
-    {
-        'mrcjkb/rustaceanvim',
-        lazy = false,
-        keys = {
-            { "<leader>tt", function() vim.cmd.RustLsp("run", "--nocapture") end }
-        },
-    }
 }
